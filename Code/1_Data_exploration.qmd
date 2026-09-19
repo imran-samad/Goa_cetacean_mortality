@@ -2,11 +2,10 @@
 title: "Data Exploration"
 format: gfm
 keep-md: true
-output-dir: "../Results"
-output-file: "1_Data_exploration.md"
+output: "../Results/1_Data_exploration.md"
 execute:
-  knit:
-    dir: ".."
+  warning: false
+  message: false
 ---
 
 # Overview
@@ -23,24 +22,30 @@ The code below is organized by section so that the rationale, the implementation
 
 The first section reads the stranding dataset, keeps only valid records from the study period, and restricts analysis to the two focal species. It then summarizes basic monthly patterns, age structure, and death-code composition.
 
+### Annotation: data import and filtering
+
+This chunk sets up the analysis and reduces the dataset to the two focal species and valid records from 2017 onward. The filtering step is important because it removes flagged records and keeps the time window used for the study.
+
 ```{r}
 library(tidyverse)
 library(ggpubr)
 library(sf)
 library(purrr)
 
+# Read the cleaned stranding dataset from the project Data folder.
 dat_str <- read.csv("../Data/Strandings_flagged_geo_corrected.csv")
 
+# Keep only valid records and the focal species for this analysis.
 dat_str <- dat_str |>
   filter(flag == FALSE | is.na(flag), Year >= 2017) |>
   filter(Species_co %in% c("Humpback dolphin", "Indo-Pacific finless porpoise"))
 
-# Species composition summary
+# Species composition summary: check whether one species dominates the record set.
 dat_str |>
   count(Species_co, name = "n") |>
   arrange(desc(n))
 
-# Monthly totals by species
+# Monthly totals by species: a first pass at seasonality before deeper summaries.
 dat_str |>
   ggplot(aes(x = as.factor(Month))) +
   geom_bar() +
@@ -48,7 +53,8 @@ dat_str |>
   labs(x = "Month", y = "Total strandings") +
   theme_minimal()
 
-# Mean monthly counts with uncertainty
+# Mean monthly counts with uncertainty: this summarises the monthly signal while
+# preserving the estimated error around the mean annual pattern.
 dat_str |>
   group_by(Year, Month, Species_co) |>
   summarise(count = n(), .groups = "drop") |>
@@ -91,6 +97,10 @@ The monthly pattern is easiest to interpret by tracking the seasonal peak across
 ## 2. Reviewer estimate comparison
 
 This section compares reviewer estimates for decomposition and PMI against the self-reported values. It calculates the average of reviewer scores and then derives percentage differences from the self-assessment.
+
+### Annotation: reviewer agreement calculation
+
+This section calculates the mean reviewer score for each case and then derives the percentage difference from the self-reported decomposition and PMI values. This is the most technical part of the report because it translates multiple reviewer assessments into a single summary metric.
 
 ```{r}
 decomp <- read.csv("../Data/Decomposition_estimates.csv")
@@ -139,9 +149,13 @@ The table shows the average deviation and spread for each metric; a low mean dif
 
 The final section loads the Goan coastal grid and coastline, processes GPX route data, and estimates average fishing and tourist boat activity within each grid cell. A side-by-side map layout is used for visual comparison.
 
+### Annotation: spatial aggregation logic
+
+This is the most computationally intensive section. It matches each boat-survey waypoint to the appropriate grid cell, aggregates counts across all survey events, and then calculates the average fishing and tourist activity per grid cell.
+
 ```{r}
-goa_grid <- st_read("../GIS/Goa_buffer_5km_grid.shp")
-goa_coast <- st_read("../GIS/Goa_coast.shp")
+goa_grid <- st_read("../Data/Shp files/Goa_buffer_5km_grid.shp")
+goa_coast <- st_read("../Data/Shp files/Goa_coast.shp")
 
 process_gpx_and_s1 <- function(gpx_folders, s1_files, goa_grid) {
   results <- map2_dfr(gpx_folders, s1_files, function(folder, s1_file) {
@@ -197,12 +211,16 @@ s1_files <- c(
   "../Data/Population/Dolphins_covariates_2602.csv"
 )
 
+# Calculate the mean fishing and tourist boat traffic per grid cell for mapping.
 final_df <- process_gpx_and_s1(folders, s1_files, goa_grid)
 
 dat_map <- final_df |>
   group_by(grid_id) |>
   summarise(FB_avg = mean(FB, na.rm = TRUE), TB_avg = mean(TB, na.rm = TRUE), .groups = "drop")
 
+# Build two separate sf maps and arrange them side by side. We use ggarrange
+# instead of patchwork here because the latter currently fails with sf objects in
+# this environment.
 map_TB <- ggplot() +
   geom_sf(data = dat_map, aes(fill = TB_avg), alpha = 0.7) +
   geom_sf(data = goa_coast, fill = "NA", colour = "black") +

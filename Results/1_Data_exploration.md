@@ -24,45 +24,28 @@ from the study period, and restricts analysis to the two focal species.
 It then summarizes basic monthly patterns, age structure, and death-code
 composition.
 
+### Annotation: data import and filtering
+
+This chunk sets up the analysis and reduces the dataset to the two focal
+species and valid records from 2017 onward. The filtering step is
+important because it removes flagged records and keeps the time window
+used for the study.
+
 ``` r
 library(tidyverse)
-```
-
-    ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-    ✔ ggplot2 3.5.1     ✔ purrr   1.0.2
-    ✔ tibble  3.2.1     ✔ dplyr   1.1.4
-    ✔ tidyr   1.3.1     ✔ stringr 1.5.0
-    ✔ readr   2.1.2     ✔ forcats 0.5.1
-
-    Warning: package 'ggplot2' was built under R version 4.3.3
-
-    Warning: package 'tidyr' was built under R version 4.3.3
-
-    Warning: package 'purrr' was built under R version 4.3.3
-
-    Warning: package 'dplyr' was built under R version 4.3.3
-
-    ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ✖ dplyr::filter() masks stats::filter()
-    ✖ dplyr::lag()    masks stats::lag()
-
-``` r
 library(ggpubr)
 library(sf)
-```
-
-    Linking to GEOS 3.11.2, GDAL 3.6.2, PROJ 9.2.0; sf_use_s2() is TRUE
-
-``` r
 library(purrr)
 
+# Read the cleaned stranding dataset from the project Data folder.
 dat_str <- read.csv("../Data/Strandings_flagged_geo_corrected.csv")
 
+# Keep only valid records and the focal species for this analysis.
 dat_str <- dat_str |>
   filter(flag == FALSE | is.na(flag), Year >= 2017) |>
   filter(Species_co %in% c("Humpback dolphin", "Indo-Pacific finless porpoise"))
 
-# Species composition summary
+# Species composition summary: check whether one species dominates the record set.
 dat_str |>
   count(Species_co, name = "n") |>
   arrange(desc(n))
@@ -73,7 +56,7 @@ dat_str |>
     2 Indo-Pacific finless porpoise 173
 
 ``` r
-# Monthly totals by species
+# Monthly totals by species: a first pass at seasonality before deeper summaries.
 dat_str |>
   ggplot(aes(x = as.factor(Month))) +
   geom_bar() +
@@ -85,7 +68,8 @@ dat_str |>
 ![](1_Data_exploration_files/figure-commonmark/unnamed-chunk-1-1.png)
 
 ``` r
-# Mean monthly counts with uncertainty
+# Mean monthly counts with uncertainty: this summarises the monthly signal while
+# preserving the estimated error around the mean annual pattern.
 dat_str |>
   group_by(Year, Month, Species_co) |>
   summarise(count = n(), .groups = "drop") |>
@@ -135,6 +119,13 @@ period of highest stranding risk is consistent across species.
 This section compares reviewer estimates for decomposition and PMI
 against the self-reported values. It calculates the average of reviewer
 scores and then derives percentage differences from the self-assessment.
+
+### Annotation: reviewer agreement calculation
+
+This section calculates the mean reviewer score for each case and then
+derives the percentage difference from the self-reported decomposition
+and PMI values. This is the most technical part of the report because it
+translates multiple reviewer assessments into a single summary metric.
 
 ``` r
 decomp <- read.csv("../Data/Decomposition_estimates.csv")
@@ -197,6 +188,13 @@ The final section loads the Goan coastal grid and coastline, processes
 GPX route data, and estimates average fishing and tourist boat activity
 within each grid cell. A side-by-side map layout is used for visual
 comparison.
+
+### Annotation: spatial aggregation logic
+
+This is the most computationally intensive section. It matches each
+boat-survey waypoint to the appropriate grid cell, aggregates counts
+across all survey events, and then calculates the average fishing and
+tourist activity per grid cell.
 
 ``` r
 goa_grid <- st_read("../GIS/Goa_buffer_5km_grid.shp")
@@ -279,26 +277,16 @@ s1_files <- c(
   "../Data/Population/Dolphins_covariates_2602.csv"
 )
 
+# Calculate the mean fishing and tourist boat traffic per grid cell for mapping.
 final_df <- process_gpx_and_s1(folders, s1_files, goa_grid)
-```
 
-    Warning in sf_column %in% names(g): Detected an unexpected many-to-many relationship between `x` and `y`.
-    ℹ Row 33 of `x` matches multiple rows in `y`.
-    ℹ Row 27 of `y` matches multiple rows in `x`.
-    ℹ If a many-to-many relationship is expected, set `relationship =
-      "many-to-many"` to silence this warning.
-
-    Warning in sf_column %in% names(g): Detected an unexpected many-to-many relationship between `x` and `y`.
-    ℹ Row 74 of `x` matches multiple rows in `y`.
-    ℹ Row 61 of `y` matches multiple rows in `x`.
-    ℹ If a many-to-many relationship is expected, set `relationship =
-      "many-to-many"` to silence this warning.
-
-``` r
 dat_map <- final_df |>
   group_by(grid_id) |>
   summarise(FB_avg = mean(FB, na.rm = TRUE), TB_avg = mean(TB, na.rm = TRUE), .groups = "drop")
 
+# Build two separate sf maps and arrange them side by side. We use ggarrange
+# instead of patchwork here because the latter currently fails with sf objects in
+# this environment.
 map_TB <- ggplot() +
   geom_sf(data = dat_map, aes(fill = TB_avg), alpha = 0.7) +
   geom_sf(data = goa_coast, fill = "NA", colour = "black") +

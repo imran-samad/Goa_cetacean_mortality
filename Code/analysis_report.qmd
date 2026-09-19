@@ -1,0 +1,232 @@
+---
+title: "Goa Cetacean Mortality Analysis"
+format: html
+editor: visual
+---
+
+# Overview
+
+This document is structured around the three analytical components in the project workflow:
+
+1. exploratory summaries of stranding records,
+2. comparison of reviewer estimates with self-reported decomposition and PMI scores, and
+3. spatial mapping of fishing and tourist activity from survey data.
+
+The code below is organized by section so that the rationale, the implementation, and the resulting output are easy to follow. The plotting code uses `ggpubr::ggarrange()` instead of `patchwork` in the spatial section because `patchwork` currently raises an `sf`-related error in this R environment.
+
+## 1. Stranding data exploration
+
+The first section reads the stranding dataset, keeps only valid records from the study period, and restricts analysis to the two focal species. It then summarizes basic monthly patterns, age structure, and death-code composition.
+
+```{r}
+library(tidyverse)
+library(ggpubr)
+library(sf)
+library(purrr)
+
+dat_str <- read.csv("Data/Strandings_flagged_geo_corrected.csv")
+
+dat_str <- dat_str |>
+  filter(flag == FALSE | is.na(flag), Year >= 2017) |>
+  filter(Species_co %in% c("Humpback dolphin", "Indo-Pacific finless porpoise"))
+
+# Species composition summary
+dat_str |>
+  count(Species_co, name = "n") |>
+  arrange(desc(n))
+
+# Monthly totals by species
+dat_str |>
+  ggplot(aes(x = as.factor(Month))) +
+  geom_bar() +
+  facet_wrap(~Species_co, ncol = 1) +
+  labs(x = "Month", y = "Total strandings") +
+  theme_minimal()
+
+# Mean monthly counts with uncertainty
+dat_str |>
+  group_by(Year, Month, Species_co) |>
+  summarise(count = n(), .groups = "drop") |>
+  group_by(Month, Species_co) |>
+  summarise(
+    n = mean(count),
+    n_se = sd(count) / sqrt(length(count)),
+    .groups = "drop"
+  ) |>
+  ggplot(aes(x = as.factor(Month), y = n, colour = Species_co)) +
+  geom_pointrange(
+    aes(ymin = n - n_se, ymax = n + n_se),
+    position = position_dodge(width = 0.5)
+  ) +
+  theme_minimal() +
+  scale_colour_manual(
+    values = c(
+      "Humpback dolphin" = "lightsteelblue4",
+      "Indo-Pacific finless porpoise" = "gray"
+    )
+  ) +
+  theme(
+    axis.text.x = element_text(size = 12),
+    axis.text.y = element_text(size = 12),
+    axis.title.x = element_text(size = 14),
+    axis.title.y = element_text(size = 14),
+    legend.text = element_text(size = 12),
+    legend.title = element_text(size = 13),
+    legend.position = "bottom"
+  ) +
+  labs(x = "Month", y = "No. of strandings (mean ± SE)", colour = "Species")
+```
+
+This block provides the basic seasonal pattern in strandings and gives a quick check of species balance across months.
+
+### Result
+
+The monthly pattern is easiest to interpret by tracking the seasonal peak across the two focal taxa, and the figure highlights whether the period of highest stranding risk is consistent across species.
+
+## 2. Reviewer estimate comparison
+
+This section compares reviewer estimates for decomposition and PMI against the self-reported values. It calculates the average of reviewer scores and then derives percentage differences from the self-assessment.
+
+```{r}
+decomp <- read.csv("Data/Decomposition_estimates.csv")
+
+decomp <- decomp |>
+  rowwise() |>
+  mutate(
+    m_dc = mean(c_across(starts_with("DC")), na.rm = TRUE),
+    m_pmil = mean(c_across(starts_with("PMIl")), na.rm = TRUE),
+    m_pmiu = mean(c_across(starts_with("PMIu")), na.rm = TRUE)
+  ) |>
+  ungroup() |>
+  mutate(
+    dc_diff = m_dc - Self_dc,
+    pmiu_diff = m_pmiu - Self_PMIu,
+    pmil_diff = m_pmil - Self_PMIl,
+    dc_diff_perc = dc_diff / Self_dc * 100,
+    pmiu_diff_perc = pmiu_diff / Self_PMIu * 100,
+    pmil_diff_perc = pmil_diff / Self_PMIl * 100
+  )
+
+mean_decomp_summary <- tibble(
+  metric = c("DC", "PMIl", "PMIu"),
+  mean_percent_diff = c(
+    mean(decomp$dc_diff_perc, na.rm = TRUE),
+    mean(decomp$pmil_diff_perc, na.rm = TRUE),
+    mean(decomp$pmiu_diff_perc, na.rm = TRUE)
+  ),
+  sd_percent_diff = c(
+    sd(decomp$dc_diff_perc, na.rm = TRUE),
+    sd(decomp$pmil_diff_perc, na.rm = TRUE),
+    sd(decomp$pmiu_diff_perc, na.rm = TRUE)
+  )
+)
+
+mean_decomp_summary
+```
+
+This summary quantifies the average percentage divergence between self-assessment and reviewer scores, with the corresponding spread reported as the standard deviation.
+
+### Result
+
+The table shows the average deviation and spread for each metric; a low mean difference suggests stronger agreement between self-assessment and the review panel, while a larger standard deviation suggests inconsistency among evaluators.
+
+## 3. Spatial mapping of boat survey activity
+
+The final section loads the Goan coastal grid and coastline, processes GPX route data, and estimates average fishing and tourist boat activity within each grid cell. A side-by-side map layout is used for visual comparison.
+
+```{r}
+goa_grid <- st_read("GIS/Goa_buffer_5km_grid.shp")
+goa_coast <- st_read("GIS/Goa_coast.shp")
+
+process_gpx_and_s1 <- function(gpx_folders, s1_files, goa_grid) {
+  results <- map2_dfr(gpx_folders, s1_files, function(folder, s1_file) {
+    s1 <- read.csv(s1_file)
+
+    waypoints_all <- list.files(
+      folder,
+      pattern = "Waypoints_.*\\.gpx$",
+      full.names = TRUE
+    ) |>
+      map_dfr(
+        ~ st_read(.x, layer = "waypoints", quiet = TRUE) |>
+          mutate(source_file = basename(.x))
+      ) |>
+      mutate(name = as.numeric(name)) |>
+      select(name, geometry) |>
+      right_join(s1, by = c("name" = "Waypoint.number"))
+
+    waypoints_all$grid_id <- st_intersects(waypoints_all, goa_grid) %>%
+      as.integer()
+
+    waypoints_all |>
+      group_by(grid_id) |>
+      summarise(
+        FBs = sum(Number.of.fishing.boats..small.medium, na.rm = TRUE),
+        FBl = sum(Number.of.fishing.boats..large, na.rm = TRUE),
+        TB = sum(Number.of.tourist.boats, na.rm = TRUE),
+        .groups = "drop"
+      ) |>
+      mutate(FB = FBs + FBl) |>
+      select(-FBs, -FBl) |>
+      st_drop_geometry() |>
+      mutate(grid_id = as.numeric(grid_id)) |>
+      right_join(goa_grid, by = c("grid_id" = "id")) |>
+      filter(!is.na(TB)) |>
+      st_as_sf()
+  })
+
+  return(results)
+}
+
+folders <- c(
+  "Data/Surveys/",
+  "Data/Surveys/Apr 25/",
+  "Data/Surveys/Nov 25/",
+  "Data/Surveys/Feb 26/"
+)
+
+s1_files <- c(
+  "Data/Population/Dolphins_covariates_2312.csv",
+  "Data/Population/Dolphins_covariates_2504.csv",
+  "Data/Population/Dolphins_covariates_2511.csv",
+  "Data/Population/Dolphins_covariates_2602.csv"
+)
+
+final_df <- process_gpx_and_s1(folders, s1_files, goa_grid)
+
+dat_map <- final_df |>
+  group_by(grid_id) |>
+  summarise(FB_avg = mean(FB, na.rm = TRUE), TB_avg = mean(TB, na.rm = TRUE), .groups = "drop")
+
+map_TB <- ggplot() +
+  geom_sf(data = dat_map, aes(fill = TB_avg), alpha = 0.7) +
+  geom_sf(data = goa_coast, fill = "NA", colour = "black") +
+  scale_fill_gradientn(colours = c("lightsteelblue4", "dodgerblue", "darkblue")) +
+  coord_sf() +
+  labs(fill = "Average no. of\nTourist Boats") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+map_FN <- ggplot() +
+  geom_sf(data = dat_map, aes(fill = FB_avg), alpha = 0.7) +
+  geom_sf(data = goa_coast, fill = "NA", colour = "black") +
+  scale_fill_gradientn(colours = c("lightsteelblue4", "dodgerblue", "darkblue")) +
+  coord_sf() +
+  labs(fill = "Average no. of\nFishing Gears") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggpubr::ggarrange(map_TB, map_FN, ncol = 2, common.legend = FALSE)
+```
+
+This figure compares average tourist and fishing activity across the grid, which is useful for identifying spatial overlap with observed cetacean mortality patterns.
+
+### Result
+
+The two-map panel allows spatial comparison of tourist and fishing intensity. If the highest values are concentrated in similar grid cells, that supports the hypothesis that areas with elevated human activity overlap with higher risk for cetacean mortality.
+
+# Notes
+
+- The code is intentionally split by analytical purpose so that each section can be interpreted independently.
+- The spatial mapping section avoids `patchwork` because it can fail with `sf` objects in this R environment.
+- If desired, each section can be made into a separate code chunk or chapter later for a fuller manuscript-ready report.

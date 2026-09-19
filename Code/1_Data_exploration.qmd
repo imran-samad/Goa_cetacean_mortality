@@ -2,6 +2,11 @@
 title: "Data Exploration"
 format: gfm
 keep-md: true
+output-dir: "../Results"
+output-file: "1_Data_exploration.md"
+execute:
+  knit:
+    dir: ".."
 ---
 
 # Overview
@@ -24,7 +29,7 @@ library(ggpubr)
 library(sf)
 library(purrr)
 
-dat_str <- read.csv("Data/Strandings_flagged_geo_corrected.csv")
+dat_str <- read.csv("../Data/Strandings_flagged_geo_corrected.csv")
 
 dat_str <- dat_str |>
   filter(flag == FALSE | is.na(flag), Year >= 2017) |>
@@ -88,7 +93,7 @@ The monthly pattern is easiest to interpret by tracking the seasonal peak across
 This section compares reviewer estimates for decomposition and PMI against the self-reported values. It calculates the average of reviewer scores and then derives percentage differences from the self-assessment.
 
 ```{r}
-decomp <- read.csv("Data/Decomposition_estimates.csv")
+decomp <- read.csv("../Data/Decomposition_estimates.csv")
 
 decomp <- decomp |>
   rowwise() |>
@@ -135,8 +140,8 @@ The table shows the average deviation and spread for each metric; a low mean dif
 The final section loads the Goan coastal grid and coastline, processes GPX route data, and estimates average fishing and tourist boat activity within each grid cell. A side-by-side map layout is used for visual comparison.
 
 ```{r}
-goa_grid <- st_read("GIS/Goa_buffer_5km_grid.shp")
-goa_coast <- st_read("GIS/Goa_coast.shp")
+goa_grid <- st_read("../GIS/Goa_buffer_5km_grid.shp")
+goa_coast <- st_read("../GIS/Goa_coast.shp")
 
 process_gpx_and_s1 <- function(gpx_folders, s1_files, goa_grid) {
   results <- map2_dfr(gpx_folders, s1_files, function(folder, s1_file) {
@@ -179,17 +184,17 @@ process_gpx_and_s1 <- function(gpx_folders, s1_files, goa_grid) {
 }
 
 folders <- c(
-  "Data/Surveys/",
-  "Data/Surveys/Apr 25/",
-  "Data/Surveys/Nov 25/",
-  "Data/Surveys/Feb 26/"
+  "../Data/Surveys/",
+  "../Data/Surveys/Apr 25/",
+  "../Data/Surveys/Nov 25/",
+  "../Data/Surveys/Feb 26/"
 )
 
 s1_files <- c(
-  "Data/Population/Dolphins_covariates_2312.csv",
-  "Data/Population/Dolphins_covariates_2504.csv",
-  "Data/Population/Dolphins_covariates_2511.csv",
-  "Data/Population/Dolphins_covariates_2602.csv"
+  "../Data/Population/Dolphins_covariates_2312.csv",
+  "../Data/Population/Dolphins_covariates_2504.csv",
+  "../Data/Population/Dolphins_covariates_2511.csv",
+  "../Data/Population/Dolphins_covariates_2602.csv"
 )
 
 final_df <- process_gpx_and_s1(folders, s1_files, goa_grid)

@@ -56,7 +56,7 @@ library(sf)
 ``` r
 library(purrr)
 
-dat_str <- read.csv("Data/Strandings_flagged_geo_corrected.csv")
+dat_str <- read.csv("../Data/Strandings_flagged_geo_corrected.csv")
 
 dat_str <- dat_str |>
   filter(flag == FALSE | is.na(flag), Year >= 2017) |>
@@ -137,7 +137,7 @@ against the self-reported values. It calculates the average of reviewer
 scores and then derives percentage differences from the self-assessment.
 
 ``` r
-decomp <- read.csv("Data/Decomposition_estimates.csv")
+decomp <- read.csv("../Data/Decomposition_estimates.csv")
 
 decomp <- decomp |>
   rowwise() |>
@@ -199,7 +199,7 @@ within each grid cell. A side-by-side map layout is used for visual
 comparison.
 
 ``` r
-goa_grid <- st_read("GIS/Goa_buffer_5km_grid.shp")
+goa_grid <- st_read("../GIS/Goa_buffer_5km_grid.shp")
 ```
 
     Reading layer `Goa_buffer_5km_grid' from data source 
@@ -212,7 +212,7 @@ goa_grid <- st_read("GIS/Goa_buffer_5km_grid.shp")
     Geodetic CRS:  WGS 84
 
 ``` r
-goa_coast <- st_read("GIS/Goa_coast.shp")
+goa_coast <- st_read("../GIS/Goa_coast.shp")
 ```
 
     Reading layer `Goa_coast' from data source 
@@ -266,17 +266,17 @@ process_gpx_and_s1 <- function(gpx_folders, s1_files, goa_grid) {
 }
 
 folders <- c(
-  "Data/Surveys/",
-  "Data/Surveys/Apr 25/",
-  "Data/Surveys/Nov 25/",
-  "Data/Surveys/Feb 26/"
+  "../Data/Surveys/",
+  "../Data/Surveys/Apr 25/",
+  "../Data/Surveys/Nov 25/",
+  "../Data/Surveys/Feb 26/"
 )
 
 s1_files <- c(
-  "Data/Population/Dolphins_covariates_2312.csv",
-  "Data/Population/Dolphins_covariates_2504.csv",
-  "Data/Population/Dolphins_covariates_2511.csv",
-  "Data/Population/Dolphins_covariates_2602.csv"
+  "../Data/Population/Dolphins_covariates_2312.csv",
+  "../Data/Population/Dolphins_covariates_2504.csv",
+  "../Data/Population/Dolphins_covariates_2511.csv",
+  "../Data/Population/Dolphins_covariates_2602.csv"
 )
 
 final_df <- process_gpx_and_s1(folders, s1_files, goa_grid)

@@ -1,7 +1,7 @@
 ---
-title: "Goa Cetacean Mortality Analysis"
-format: html
-editor: visual
+title: "Data Exploration"
+format: gfm
+keep-md: true
 ---
 
 # Overview

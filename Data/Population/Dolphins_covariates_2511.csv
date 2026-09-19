@@ -1,0 +1,275 @@
+start,Waypoint number,Beaufort state (1-10),Boat speed (kmph),"Distance travelled (odometer, km)",Visibility (WGF; all out of 3),Number of fishing boats: small/medium,Number of fishing boats: large,Number of tourist boats,Comments,_id,_uuid,_submission_time,_validation_status,_notes,_status,_submitted_by,__version__,_tags,_index,Rep
+2025-11-13T06:56:10.438+05:30,714,1,14,0.1,111,4,,,Day 1 morjim to miramar,604593496,d0b46e1d-9f94-4db9-8baf-f2908e26c494,2025-11-13T05:44:39,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,566,1
+2025-11-13T07:00:05.532+05:30,715,,16,1,111,1,,,,604593503,9989ce9f-d173-45ed-a250-e6a9c874eab2,2025-11-13T05:44:40,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,567,1
+2025-11-13T07:05:07.111+05:30,716,,13,2,111,1,,,,604593508,5f73ceed-4019-40f2-be53-630f61b3e79a,2025-11-13T05:44:41,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,568,1
+2025-11-13T07:09:21.700+05:30,717,,12.5,3,211,,,,,604593510,4e07ff53-2498-4eef-9d03-0dd2292ed7be,2025-11-13T05:44:41,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,569,1
+2025-11-13T07:13:35.783+05:30,718,,12.6,4,221,1,,,,604593514,87ea340a-8d60-45b3-beb7-34e0d308cf72,2025-11-13T05:44:42,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,570,1
+2025-11-13T07:18:54.716+05:30,719,221,13.5,5,211,,,,,604593520,a97190e4-5d1a-45ec-9c7f-4ca9cb6b2da1,2025-11-13T05:44:42,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,571,1
+2025-11-13T07:23:24.142+05:30,720,,12,6,221,,,,,604593522,9571880d-1ace-48e3-ad1e-eb7b4cbe82bd,2025-11-13T05:44:43,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,572,1
+2025-11-13T07:28:20.092+05:30,722,,12.1,7,221,,,,1 mPS travelling north,604593530,a02a1d88-dfd0-488b-98e6-905c032de8f7,2025-11-13T05:44:44,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,573,1
+2025-11-13T07:33:08.651+05:30,723,,12,8,211,,,,,604593536,91437b43-8c12-437b-829f-433b2276b85f,2025-11-13T05:44:44,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,574,1
+2025-11-13T07:38:21.066+05:30,724,,12,9,211,,,,,604593544,6003b10c-c5be-4c91-b96a-8c60f9f70b30,2025-11-13T05:44:45,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,575,1
+2025-11-13T07:43:33.156+05:30,725,,10.5,10,221,,1,,Trawler,604593546,084c759e-d9d4-47cd-81be-c9b07e32b6e1,2025-11-13T05:44:45,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,576,1
+2025-11-13T07:48:06.071+05:30,726,,12,11,221,,,,,604593548,ee79f0b0-5740-4204-8c51-a1046b2a0bdc,2025-11-13T05:44:46,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,577,1
+2025-11-13T07:58:33.508+05:30,727,,11,12,221,,,,,604593550,0e423cdd-646e-4226-b430-ead8197be2e6,2025-11-13T05:44:46,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,578,1
+2025-11-13T08:04:06.876+05:30,730,,12.5,13,211,,1,,Trawler far away,604593561,fbef4063-6085-4593-9687-9941fba29aa1,2025-11-13T05:44:48,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,579,1
+2025-11-13T08:08:29.214+05:30,731,,12.6,14,211,,,,,604593569,c3a18176-0b0f-45a2-ac59-d8a037185b73,2025-11-13T05:44:48,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,580,1
+2025-11-13T08:14:37.119+05:30,733,,12,15.25,221,,,,"No fishing, no tourism",604593577,886abcb7-1588-4457-88f2-720d80dacc9d,2025-11-13T05:44:49,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,581,1
+2025-11-13T08:18:29.234+05:30,734,,11.9,16,121,,,,,604593581,d603242a-f76d-4d68-bdfd-46fd7d373087,2025-11-13T05:44:49,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,582,1
+2025-11-13T08:23:14.984+05:30,735,,12,17,121,,,,,604593584,c1acbc12-33bb-4b22-9782-389930280c84,2025-11-13T05:44:50,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,583,1
+2025-11-13T08:28:06.823+05:30,737,,12,18,211,,,,Many interspersed gulls,604593592,0458745b-9984-415a-af9f-135887b26255,2025-11-13T05:44:51,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,584,1
+2025-11-13T08:33:01.033+05:30,738,,12.6,19,221,,,,,604593595,0e65b9c0-3605-4e22-9c3c-355f86122315,2025-11-13T05:44:51,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,585,1
+2025-11-13T08:38:40.037+05:30,739,,11.6,20,221,,,,,604593598,39401b8a-b136-4463-b40f-4d9abcda34dc,2025-11-13T05:44:52,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,586,1
+2025-11-13T08:43:26.876+05:30,741,,11.6,21,221,,,2,1 mPS heading out of miramar,604593618,773e4548-0ca1-4c6d-be15-bc6b57e63b6a,2025-11-13T05:44:54,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,587,1
+2025-11-13T08:50:46.586+05:30,742,,11.7,22.3,221,,,,Very few tourist or fishing boats ,604593624,9583374d-c4f2-441d-87b2-7afcbd636eaa,2025-11-13T05:44:55,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,588,1
+2025-11-13T08:54:19.050+05:30,743,,11.8,23,211,,,,,604593631,f0665833-1da9-4c17-b6fb-6fa3ab8e090e,2025-11-13T05:44:55,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,589,1
+2025-11-13T08:59:28.486+05:30,744,,13,24,121,,,,,604593638,bc977004-2404-4b51-bf0e-6019124277d0,2025-11-13T05:44:56,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,590,1
+2025-11-13T09:03:32.112+05:30,745,,12.9,25,111,,,,,604593642,379642f5-0285-4a22-b3e7-405eb6da9643,2025-11-13T05:44:57,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,591,1
+2025-11-13T09:08:24.790+05:30,746,,12,26.1,111,,,,Survey end,604593647,536b7e23-a2cf-4c4b-b14f-c6d7d342024e,2025-11-13T05:44:57,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,592,1
+2025-11-14T06:49:27.684+05:30,746,1,11,0.05,112,1,,,Survey starts miramar to betul,605477405,b6ce6a5c-41c1-477b-ad74-4d4f619a56df,2025-11-14T05:49:31,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,593,1
+2025-11-14T06:53:54.459+05:30,747,,14,1,112,2,,,Small gillnetters,605477414,9021b155-c2cb-4a26-b35c-9c7b4a2a27e7,2025-11-14T05:49:31,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,594,1
+2025-11-14T06:58:23.244+05:30,748,,13,2,111,2,,,,605477419,7cfaec0f-8c31-453e-a0af-a634a8edacfb,2025-11-14T05:49:32,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,595,1
+2025-11-14T07:03:08.765+05:30,750,,13.5,3,211,,,,,605477434,e2e30219-6ef1-4108-aec1-a0ba1915e1dd,2025-11-14T05:49:34,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,596,1
+2025-11-14T07:07:17.238+05:30,751,,13.8,4,211,,,,,605477441,ef1b966b-fbca-4c5e-99ff-4e369d79a0df,2025-11-14T05:49:34,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,597,1
+2025-11-14T07:11:18.253+05:30,754,,13.3,5,211,,,,,605477456,9923ce53-dc34-4ed8-a107-ec48a77b4a40,2025-11-14T05:49:36,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,598,1
+2025-11-14T07:16:31.702+05:30,755,,14.4,6.15,211,,1,,Probably not trawling,605477463,da26ae7b-cb39-4c53-a5f0-efae129c76a3,2025-11-14T05:49:36,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,599,1
+2025-11-14T07:20:41.077+05:30,756,,13,7.1,221,,,,,605477467,9cf39f40-fbdf-4458-b60c-4e42e0cdde83,2025-11-14T05:49:37,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,600,1
+2025-11-14T07:24:42.313+05:30,757,,12,8,211,,,,,605477477,b9b51674-8b85-427c-8209-75253e41450e,2025-11-14T05:49:38,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,601,1
+2025-11-14T07:29:47.605+05:30,758,,12.2,9,221,,,,,605477481,52af9df5-9b51-416a-952f-5edfa2e50d8b,2025-11-14T05:49:38,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,602,1
+2025-11-14T07:35:27.693+05:30,760,,10.5,10,221,1,,,,605477485,ad15f7bd-1b6b-4608-b69e-446d4c02f379,2025-11-14T05:49:39,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,603,1
+2025-11-14T07:40:17.033+05:30,761,,10.5,11,221,,,,,605477494,2ca18648-21cd-4cbb-9608-783ba97f15c9,2025-11-14T05:49:39,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,604,1
+2025-11-14T07:45:15.077+05:30,762,,13,12,211,,,,,605477496,4a6cf24e-8e0c-4802-b4b1-1cd74d0e87e9,2025-11-14T05:49:40,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,605,1
+2025-11-14T07:50:04.026+05:30,763,,12.9,13,121,,,,,605477500,91d36d7a-dd4a-4648-9e7f-c5bc9b7c8b53,2025-11-14T05:49:40,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,606,1
+2025-11-14T07:55:13.771+05:30,764,,13,14.1,111,,1,,Trawler + few small boats returning north ,605477503,9f37262f-dd8e-47a2-9f58-33f30746bff5,2025-11-14T05:49:41,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,607,1
+2025-11-14T07:59:36.345+05:30,765,,12.3,15.1,111,,,,,605477513,7b096536-e306-4833-bf02-e375ec761655,2025-11-14T05:49:41,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,608,1
+2025-11-14T08:03:52.822+05:30,766,,12.4,16,121,,,,,605477518,5c399034-e44d-48fb-8f45-653d721c656a,2025-11-14T05:49:42,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,609,1
+2025-11-14T08:08:42.323+05:30,767,,12.6,17,121,,,,,605477524,2b3b6660-6c63-4ff2-b63d-75ddd432672c,2025-11-14T05:49:42,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,610,1
+2025-11-14T08:13:23.437+05:30,769,,12.5,18,121,,,,,605477535,2c6ab1b0-00d7-4873-9991-3decefcb57bf,2025-11-14T05:49:43,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,611,1
+2025-11-14T08:18:25.245+05:30,770,,13,19,121,,,,,605477537,4ca37f76-29ea-45b3-8311-4c7cf4c852d8,2025-11-14T05:49:44,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,612,1
+2025-11-14T08:23:23.012+05:30,771,,12.5,20,121,,,,4 trawlers far into the sea (1km +),605477541,e2fb9696-207d-4aca-9350-3ab36dad151f,2025-11-14T05:49:44,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,613,1
+2025-11-14T08:29:00.878+05:30,772,,12.5,21.15,121,,,,,605477546,beb0349c-25b8-4e4a-beac-e034eec36c3d,2025-11-14T05:49:45,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,614,1
+2025-11-14T08:33:39.711+05:30,773,,13,22.15,221,,,,,605477552,c3534b9a-5ea5-4ea2-8f16-dffbe033160f,2025-11-14T05:49:46,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,615,1
+2025-11-14T08:38:19.485+05:30,774,,13,23.1,121,,,,3 kayaks,605477561,16320767-0028-46b5-a59a-29659aa31af4,2025-11-14T05:49:46,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,616,1
+2025-11-14T08:42:11.182+05:30,775,,13.4,24,121,,,,,605477565,82b88675-1c48-4378-84f0-2511aa0014dc,2025-11-14T05:49:47,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,617,1
+2025-11-14T08:48:37.155+05:30,776,,14.2,25.4,121,,,,,605477568,4b6405f1-1185-4d15-85a7-2a4b77fb2a4b,2025-11-14T05:49:47,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,618,1
+2025-11-14T08:51:10.601+05:30,777,,13.5,26,221,,,,,605477574,5bce2559-dad2-4bd3-8872-a368cbb2fe0d,2025-11-14T05:49:48,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,619,1
+2025-11-14T08:55:55.882+05:30,780,,11.8,27,221,,,,,605477589,6e0602a3-aa72-4793-b03e-301274d569cc,2025-11-14T05:49:49,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,620,1
+2025-11-14T09:00:56.418+05:30,781,,12.5,28,221,,,,,605477596,8f638477-c0a4-4806-adb1-ecbdbb5eabf3,2025-11-14T05:49:50,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,621,1
+2025-11-14T09:05:46.854+05:30,782,,12.5,29,111,,,,,605477601,b80e7a09-12f5-4b07-bd6b-eac4f3800350,2025-11-14T05:49:50,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,622,1
+2025-11-14T09:12:16.468+05:30,785,,12.6,30,111,,,,,605477628,a549dbc3-a6cb-4e39-ab56-90e5ad03ca70,2025-11-14T05:49:53,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,623,1
+2025-11-14T09:15:56.442+05:30,787,,12.5,31.1,111,,,,,605477636,0ea02d01-5517-458a-ab72-9659a9f5c5b2,2025-11-14T05:49:53,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,624,1
+2025-11-14T09:20:34.426+05:30,790,,12.2,32,221,,,,,605477640,1001ad67-8054-40c9-ac19-167f9ccfd043,2025-11-14T05:49:54,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,625,1
+2025-11-14T09:25:49.523+05:30,791,,12,33.1,221,,,,,605477646,21878111-a793-487a-ab39-871132b48e19,2025-11-14T05:49:54,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,626,1
+2025-11-14T09:30:32.189+05:30,792,,12.5,34.1,221,,,,,605477654,c66d0739-daec-4e61-a583-c4379ac353c3,2025-11-14T05:49:55,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,627,1
+2025-11-14T09:34:46.599+05:30,793,,11.6,35,211,,,,,605477661,bd06ca69-cb3f-458a-938e-1788022c33eb,2025-11-14T05:49:55,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,628,1
+2025-11-14T09:44:41.134+05:30,794,,12.5,37,221,,,,,605477670,52182a1d-0dab-4f25-b6ea-5aa17da7e8ab,2025-11-14T05:49:56,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,629,1
+2025-11-14T09:49:05.916+05:30,796,,11.9,38,321,,,,,605477686,9ef38de6-bd36-49ac-9d68-d9fadaf72a43,2025-11-14T05:49:57,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,630,1
+2025-11-14T09:54:07.413+05:30,797,,11.6,39,321,,1,,"4 trawlers, all far offshore",605477691,bec1a9e8-8717-4890-b2d0-ab89ac4004ee,2025-11-14T05:49:58,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,631,1
+2025-11-14T09:59:19.202+05:30,798,,12.6,40,321,,,,Very little fishing. Likely all big boats are offshore,605477699,45348078-4655-45d0-976d-e6b15cd1d253,2025-11-14T05:49:58,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,632,1
+2025-11-14T10:04:10.300+05:30,799,,12.5,41,221,,,,,605477703,4c8d4eaf-78ba-4881-9c10-816b481c1a2d,2025-11-14T05:49:59,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,633,1
+2025-11-14T10:09:01.371+05:30,800,,13,42,221,,,,,605477708,520bd9ef-8e31-4547-adeb-84d3efe9d045,2025-11-14T05:49:59,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,634,1
+2025-11-14T10:22:28.039+05:30,806,,13,44.1,221,,,,,605477743,01f490da-4211-468d-a8a3-48b48784d587,2025-11-14T05:50:03,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,635,1
+2025-11-14T10:31:15.097+05:30,808,,12.8,46,211,,,,,605477754,faeb72b9-f13b-45bf-b53d-efdc657d502f,2025-11-14T05:50:04,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,636,1
+2025-11-14T10:35:55.227+05:30,809,,12.5,47,121,,,,,605477762,49ee0b41-21dd-4290-96db-fd2038ce42c8,2025-11-14T05:50:04,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,637,1
+2025-11-14T10:40:22.643+05:30,810,,13.4,48,121,2,,,Purse seines,605477766,5b2d7658-f8e8-43e4-b1a9-47c6abbe5d35,2025-11-14T05:50:05,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,638,1
+2025-11-14T10:45:06.384+05:30,811,,12.7,49,121,,,,,605477773,e1136c5f-57c6-4708-9a81-c0ee2a87879b,2025-11-14T05:50:05,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,639,1
+2025-11-14T10:49:27.282+05:30,812,,13.2,50,121,,,,,605477780,597275c0-df06-40d6-bf78-aedd10ed0679,2025-11-14T05:50:06,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,640,1
+2025-11-14T10:58:29.994+05:30,813,,14.2,52,121,,,,,605477790,0c2f3d67-2023-497f-af54-8efe44604b9a,2025-11-14T05:50:06,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,641,1
+2025-11-14T11:07:17.139+05:30,814,,14.8,54,121,,,,,605477794,4db58ebf-d2ca-4389-af15-63976b959494,2025-11-14T05:50:07,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,642,1
+2025-11-14T11:10:40.951+05:30,815,,15,55,121,,1,,,605477797,ed9b7cbd-c111-4728-9bf3-53c12fc5bf9b,2025-11-14T05:50:07,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,643,1
+2025-11-14T11:14:30.097+05:30,816,,14,56,111,,,,Entering betul,605477804,6e77a035-e51d-4a9a-9d15-84ee68b88d12,2025-11-14T05:50:08,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,644,1
+2025-11-14T11:18:38.273+05:30,817,,11.5,56.8,111,,,,Survey end betul,605477814,700130a1-d062-4a78-8886-ae792edf9a06,2025-11-14T05:50:08,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,645,1
+2025-11-15T06:36:33.733+05:30,817,1,12.5,0,111,1,,,Survey starts Betul to Rajbagh via Polem,606271258,d564acfd-cd76-4061-b84e-5de6d17dc206,2025-11-15T05:32:57,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,646,1
+2025-11-15T06:42:23.643+05:30,819,,12.5,1.1,211,2,,,Boats near rocks rivermouth,606271272,9e0094a7-575b-4367-8347-5b2382a40f26,2025-11-15T05:32:59,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,647,1
+2025-11-15T06:46:30.340+05:30,821,,13.5,2,111,2,,,,606271275,49cb2677-040e-45b6-bc01-05553e731844,2025-11-15T05:32:59,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,648,1
+2025-11-15T06:50:56.529+05:30,822,,12.7,3,111,4,,,Gillneters,606271281,ba3f03c8-562d-49cd-a2b0-8f12fed2b13c,2025-11-15T05:33:00,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,649,1
+2025-11-15T06:56:21.279+05:30,825,,12.3,4.1,211,1,,,,606271291,1d0aa69a-0717-45c2-88b3-8ad67963aa36,2025-11-15T05:33:01,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,650,1
+2025-11-15T07:00:42.124+05:30,827,,12.4,5,211,2,,,,606271303,121ffe6c-a5a7-4380-bda3-59bf1b43cd35,2025-11-15T05:33:02,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,651,1
+2025-11-15T07:05:29.732+05:30,828,,11.5,6,211,1,,,2 ps travelling offshore ,606271309,e50e229c-b5d8-4dd2-8b18-c01377c38b3c,2025-11-15T05:33:03,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,652,1
+2025-11-15T07:10:08.282+05:30,829,,12.8,7,211,1,,,,606271312,95dc8e72-766b-4ca6-b012-9ed90a6d52e4,2025-11-15T05:33:03,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,653,1
+2025-11-15T07:15:53.709+05:30,830,,13.8,8.15,121,,,1,,606271317,b49da969-d095-4076-93b5-37f9bb8f3103,2025-11-15T05:33:04,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,654,1
+2025-11-15T07:19:36.978+05:30,831,,12,9,121,,,,,606271322,ea76846d-7866-4601-b7ad-5fe5fb66d9c9,2025-11-15T05:33:04,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,655,1
+2025-11-15T07:24:19.497+05:30,832,,12.6,10,111,,,,,606271323,782e5c32-a7c6-463b-8467-af0e043e3dfb,2025-11-15T05:33:05,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,656,1
+2025-11-15T07:29:08.780+05:30,833,,12.6,11,111,,,,,606271325,eadcab91-04eb-4887-ac9f-576f9860d151,2025-11-15T05:33:05,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,657,1
+2025-11-15T07:34:23.565+05:30,834,,12.5,12,211,,,,Strong waves,606271328,f2c2c16d-72f9-4dcd-a4da-a0d859bf3a70,2025-11-15T05:33:06,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,658,1
+2025-11-15T07:39:34.515+05:30,835,,11,13,211,1,,,,606271335,e942c914-c548-406e-b4e7-990955872004,2025-11-15T05:33:06,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,659,1
+2025-11-15T07:44:52.543+05:30,836,,11.8,14.15,121,1,,,,606271340,cb4f8cc1-7d6d-4bb9-bd64-31cd8be7b40e,2025-11-15T05:33:07,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,660,1
+2025-11-15T07:48:58.665+05:30,837,,12,15,121,,,,,606271347,ac9f4a9f-4ab1-48bb-a0d0-3d8aa8b48332,2025-11-15T05:33:07,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,661,1
+2025-11-15T07:53:52.817+05:30,838,,12.4,16,221,,,,,606271353,c0a30f3e-25d5-4706-bfd1-a7b514e99d69,2025-11-15T05:33:08,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,662,1
+2025-11-15T07:58:50.357+05:30,839,,12.6,17,221,,,,,606271357,d0319281-0ae7-466d-a708-0f8345bf4587,2025-11-15T05:33:08,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,663,1
+2025-11-15T08:03:36.329+05:30,840,,12.6,18,221,,,,,606271361,e5237099-1eec-498d-9ba8-bae0eb7c7719,2025-11-15T05:33:09,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,664,1
+2025-11-15T08:08:46.372+05:30,841,,12,19.05,121,,,,,606271365,61ba2c88-0cc3-4fb8-9eea-ffe29a7d0b1d,2025-11-15T05:33:09,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,665,1
+2025-11-15T08:13:12.310+05:30,842,,12.5,20,121,,,,,606271369,b881fed1-4430-4842-8619-85e8b73d02b4,2025-11-15T05:33:10,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,666,1
+2025-11-15T08:19:24.070+05:30,843,,12.5,21.25,131,,,,,606271374,d65471ec-0370-4ed5-a0cd-32b1b086fb46,2025-11-15T05:33:10,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,667,1
+2025-11-15T08:23:45.353+05:30,844,,13,22,121,,,5,,606271381,a2fe3aef-208e-471a-9982-9618d01115bc,2025-11-15T05:33:11,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,668,1
+2025-11-15T08:27:23.447+05:30,845,,12.6,23,121,,,,Same tourist boats as earlier returning,606271396,95d5ce1d-fefb-4594-9825-d5184c1bf0ba,2025-11-15T05:33:13,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,669,1
+2025-11-15T08:32:20.880+05:30,847,,13.5,24,111,,,,Agonda,606271399,0ec516d1-7656-4daf-9a0c-3a0e83ee815e,2025-11-15T05:33:13,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,670,1
+2025-11-15T08:37:24.814+05:30,848,,12.8,25,121,,,2,Many gulls,606271407,ee9fb3d3-7b99-4cc1-9036-3af2326cc47a,2025-11-15T05:33:14,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,671,1
+2025-11-15T08:42:03.271+05:30,849,,12.6,26,121,,,,,606271412,a846a4c0-a49b-4776-a9ce-74bc2d2902d0,2025-11-15T05:33:14,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,672,1
+2025-11-15T08:47:06.556+05:30,850,,13.5,27,121,,,,,606271419,b4003f89-992f-49d5-8951-1d6e6726433f,2025-11-15T05:33:15,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,673,1
+2025-11-15T08:52:06.249+05:30,852,,12,28,121,,,5,Probably not dolphin watching boars,606271424,80a6a4b0-a83c-4864-b8c7-b5f67e620fa1,2025-11-15T05:33:15,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,674,1
+2025-11-15T08:56:43.695+05:30,853,,12.8,29,121,,,2,,606271429,4699b33c-8c33-4d1a-9f04-8439670abd92,2025-11-15T05:33:16,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,675,1
+2025-11-15T09:01:35.660+05:30,854,,12.5,30,131,,,,,606271433,468040e8-5994-46c6-852c-db72ca30ecb6,2025-11-15T05:33:16,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,676,1
+2025-11-15T09:07:51.625+05:30,855,,12.6,31.2,131,,,,,606271435,8e4c4988-60d2-4486-b9a4-ccdcf50dc167,2025-11-15T05:33:16,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,677,1
+2025-11-15T09:11:44.044+05:30,857,,12.2,32,121,,,,Baby kayaks. Rajbagh,606271449,a0847a7a-0c0d-417f-b25b-e3ceee11babe,2025-11-15T05:33:17,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,678,1
+2025-11-15T09:16:24.820+05:30,859,,12.6,33,121,,,2,,606271456,daa13f49-8af4-43ac-8a42-a0f68e269bcb,2025-11-15T05:33:19,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,679,1
+2025-11-15T09:21:15.724+05:30,860,,12,34,131,,,2,Many ps returning,606271462,1b6e7e95-e2c5-446d-a8ab-14e0586243e0,2025-11-15T05:33:19,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,680,1
+2025-11-15T09:26:01.958+05:30,861,,13.3,35,121,,,,Very calm waters,606271468,a714628b-3aa0-4b3b-94e8-401f2c5e3490,2025-11-15T05:33:20,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,681,1
+2025-11-15T09:35:54.370+05:30,862,,14,37.15,121,,,,,606271469,6e73d666-fb81-4b18-8204-4c05cde76442,2025-11-15T05:33:20,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,682,1
+2025-11-15T09:49:07.307+05:30,866,,13.8,39.2,111,,,,Large pod of 30-40 animals seen. Boat was stopped but extra animals not counted,606271482,0a8eaaed-65d4-4077-8b7f-c3385fb672b3,2025-11-15T05:33:21,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,683,1
+2025-11-15T09:52:20.970+05:30,867,,15,40,111,1,,,Gillnet,606271486,585865de-ea3c-48b9-930b-89b4a2b5ea24,2025-11-15T05:33:22,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,684,1
+2025-11-15T10:03:58.670+05:30,870,,12.5,42,111,,,,5 porpoises seen!,606271497,862dd0a2-a6d7-488a-add9-bd5291f4ab24,2025-11-15T05:33:23,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,685,1
+2025-11-15T10:08:06.185+05:30,871,,13.2,43,111,,,,,606271501,94b7821c-aebd-4699-a2fc-143d7e10b413,2025-11-15T05:33:24,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,686,1
+2025-11-15T10:13:02.226+05:30,872,,12.6,44,221,,,,End of goa,606271509,d044101d-e1f9-4c26-9c0b-3ddc899a33b9,2025-11-15T05:33:24,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,687,1
+2025-11-15T10:18:06.493+05:30,873,,13,45,111,,,,,606271514,776be0ca-8207-4786-a025-332deea71b1d,2025-11-15T05:33:25,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,688,1
+2025-11-15T10:22:25.673+05:30,874,46,12.9,46,121,,,,,606271522,ce510213-4963-4c3a-94fe-cf4cc13e25ed,2025-11-15T05:33:25,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,689,2
+2025-11-15T10:27:03.161+05:30,875,,12.5,47,211,,,,,606271530,eacbecfb-37a5-42d7-afe3-0700cd380fa5,2025-11-15T05:33:26,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,690,2
+2025-11-15T10:32:21.756+05:30,876,,12.7,48.1,211,,,,,606271533,e94bcbb8-ed72-4583-86c6-e7b577595d71,2025-11-15T05:33:27,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,691,2
+2025-11-15T10:36:28.580+05:30,878,,12.9,49,211,,,,,606271537,c19b0218-6fc4-4cbf-9e79-bdb7ce3edad6,2025-11-15T05:33:28,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,692,2
+2025-11-15T10:41:07.477+05:30,879,,13.6,50,211,,,,,606271540,39fab965-11f0-486b-98fc-816bae751f7d,2025-11-15T05:33:28,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,693,2
+2025-11-15T10:45:40.180+05:30,880,,13.5,51,211,,,,,606271544,f6b977f9-d1ed-4da8-a736-668ee2a07f05,2025-11-15T05:33:29,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,694,2
+2025-11-15T10:50:13.857+05:30,881,,13.6,52,211,,,,,606271550,c8d05f69-146e-4428-a338-553757c27bb4,2025-11-15T05:33:29,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,695,2
+2025-11-15T10:54:35.543+05:30,882,,12.8,53,211,,,,,606271553,15255cca-c07e-4bdd-88ee-a9bea90f4bf5,2025-11-15T05:33:30,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,696,2
+2025-11-15T10:59:14.382+05:30,883,,15.3,54,211,,,,Entering rajbagh,606271557,e5f6c6ae-e3d7-4d85-bf3e-8a7818a4c8fc,2025-11-15T05:33:30,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,697,2
+2025-11-15T11:01:52.459+05:30,884,,10.9,54.7,211,,,,Survey ends,606271559,9edf64cd-09f8-4937-8202-c551ebca9fbc,2025-11-15T05:33:31,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,698,2
+2025-11-16T07:19:04.755+05:30,885,2,14.5,0,211,1,,1,Start Rajbagh to betul,606819261,21c20444-f164-4110-bc61-22f2f1734e94,2025-11-16T04:45:21,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,699,2
+2025-11-16T07:23:50.649+05:30,886,,12.9,1,211,1,,,1 gillneter returning,606819266,c4debec3-b0cd-4c44-8487-49f6762a7666,2025-11-16T04:45:21,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,700,2
+2025-11-16T07:27:58.976+05:30,887,,13.2,2,211,,,,,606819270,ca0e8bec-b5da-4f2d-873a-071eb61219a3,2025-11-16T04:45:22,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,701,2
+2025-11-16T07:32:36.254+05:30,888,,13.5,3,211,,,,1 kayak,606819273,ecaa5740-c13b-4ef8-900c-af61b4d375a9,2025-11-16T04:45:22,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,702,2
+2025-11-16T07:41:51.897+05:30,891,,12.9,5,211,,,1,1 ps travelling ,606819289,cbde27dd-393c-4e3b-a6ef-3242b8894dde,2025-11-16T04:45:24,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,703,2
+2025-11-16T07:46:48.588+05:30,892,,13,6,311,,,,Strong waves,606819293,f1e41dce-ecc8-4d6a-bd13-6b2fc6c00fb8,2025-11-16T04:45:25,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,704,2
+2025-11-16T07:50:59.264+05:30,893,,12.6,7,211,,,3,Tourist boats for butterfly beach,606819294,e8d383f5-7e3e-4a92-86fd-db3f926d0ecd,2025-11-16T04:45:25,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,705,2
+2025-11-16T07:55:58.504+05:30,894,,13.5,8,211,,,,,606819299,cdfbf0f4-dea8-43a2-9a31-095e03466839,2025-11-16T04:45:26,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,706,2
+2025-11-16T08:00:30.601+05:30,895,,13,9,211,,,,,606819302,2c00078d-1746-4d61-841c-5b293c7b9105,2025-11-16T04:45:26,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,707,2
+2025-11-16T08:04:41.973+05:30,896,,12.5,10,211,,,3,For butterfly beach?,606819306,08c1f1f2-8339-439b-94c6-d48e0efe6adf,2025-11-16T04:45:27,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,708,2
+2025-11-16T08:10:11.358+05:30,897,,13,11.15,211,,,,1 gillneter returning ,606819310,955199dc-8120-4c25-9a49-1add8cac097d,2025-11-16T04:45:27,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,709,2
+2025-11-16T08:15:33.814+05:30,900,,13.2,12.3,211,,,2,Watching dolphins far in the sea?,606819323,b6adedeb-9b3e-4c36-980c-048a1848e6ee,2025-11-16T04:45:28,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,710,2
+2025-11-16T08:18:22.695+05:30,903,,13.6,13,211,,,2,,606819334,0c2db0c3-9c31-486a-a178-9b0a9a7d6ff1,2025-11-16T04:45:30,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,711,2
+2025-11-16T08:22:58.124+05:30,907,,13.8,14,211,,,,,606819351,434c4fa3-8c18-47df-be09-6672ad76f076,2025-11-16T04:45:32,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,712,2
+2025-11-16T08:27:41.697+05:30,908,,13.5,15,211,,,,Dolphins will gulls,606819356,f28afb2d-e7e3-440b-858c-5363c8f2be01,2025-11-16T04:45:33,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,713,2
+2025-11-16T08:32:50.441+05:30,909,,12.6,16.1,111,,,,,606819361,c783efc4-18c6-4c04-899e-92ffedb574cc,2025-11-16T04:45:33,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,714,2
+2025-11-16T08:37:14.125+05:30,910,,13.4,17,211,,,,,606819365,4def97b8-727d-422a-b623-2c29f037f950,2025-11-16T04:45:34,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,715,2
+2025-11-16T08:41:36.499+05:30,911,,12,18,211,,,,1 ps heading out,606819369,81667561-451b-492a-8194-a422000bf5d5,2025-11-16T04:45:34,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,716,2
+2025-11-16T08:47:12.048+05:30,912,,12.9,19.3,211,1,,,,606819373,b5d02df4-27b3-45ad-9522-2f96df9dd2bb,2025-11-16T04:45:35,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,717,2
+2025-11-16T08:50:02.556+05:30,913,,14.3,20,111,,,,,606819376,4640aecd-13be-490a-a047-58b1e10174dd,2025-11-16T04:45:35,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,718,2
+2025-11-16T08:55:21.102+05:30,915,,12.5,21,111,,,,,606819385,74196d58-09f7-4bc1-a637-576b130ae288,2025-11-16T04:45:36,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,719,2
+2025-11-16T08:59:59.876+05:30,917,,12.6,22.05,111,,,,,606819396,e94ce6b3-e7dc-4da7-9d83-8f702026b613,2025-11-16T04:45:37,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,720,2
+2025-11-16T09:04:08.163+05:30,918,,13.2,23,111,,,,"4 ps travelling out, 3 docked",606819401,eff37264-77a8-4281-9ef1-d35af73c2e70,2025-11-16T04:45:38,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,721,2
+2025-11-16T09:08:54.017+05:30,919,,13,24,111,,,,,606819405,dc2683ae-0cbe-461a-8a1a-ded0a253c46b,2025-11-16T04:45:38,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,722,2
+2025-11-16T09:13:14.322+05:30,921,,12.5,25,111,,,,1 gillneter returning ,606819410,461d9cbb-8e1c-4778-8d29-37e984a9645e,2025-11-16T04:45:39,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,723,2
+2025-11-16T09:18:31.700+05:30,922,,12,26,111,,,1,,606819416,32da77f5-52f8-4f9d-871e-527f690d6630,2025-11-16T04:45:40,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,724,2
+2025-11-16T09:28:13.814+05:30,924,,12.5,28,111,,,,,606819421,f512688b-6530-4412-ad44-e17bb1ec0810,2025-11-16T04:45:41,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,725,2
+2025-11-16T09:33:33.288+05:30,925,,11.5,29.05,211,,,1,Recreational fishing,606819424,f96bf759-b219-45ce-8fbd-b04c9fd91009,2025-11-16T04:45:41,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,726,2
+2025-11-16T09:38:21.744+05:30,926,,12.2,30.1,211,,,,,606819429,f0cec5eb-db74-4511-bf08-b167971f22c9,2025-11-16T04:45:41,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,727,2
+2025-11-16T09:42:54.687+05:30,927,,12,31,221,,,,1 ps travelling out,606819434,d6300e5d-1055-4e18-a863-86ee99013a46,2025-11-16T04:45:42,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,728,2
+2025-11-16T09:47:14.110+05:30,928,,15,32,221,,,,,606819438,1d5a5325-417b-475d-95d3-4e7dcd05ac68,2025-11-16T04:45:42,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,729,2
+2025-11-16T10:13:24.104+05:30,931,,12.5,34.6,221,,,,"Ending survey at betul. Spent some time (500 meters of distance) with the last pod sighted at the rivermouth (only included counts from the first few minutes). Reduce 500 m in total survey effort, everything else is fine",606819449,2d64078b-e5f4-4745-82cc-033340a00232,2025-11-16T04:45:44,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,730,2
+2025-11-17T06:30:51.546+05:30,931,2,12.2,0,111,1,,,Survey starts Betul miramar,607364340,1635668c-95d3-4f7e-9192-6a33e36aff70,2025-11-17T05:35:09,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,731,2
+2025-11-17T06:35:56.886+05:30,932,,14,1.1,111,,,,,607364344,aa8be491-4fd8-41bc-9add-f4afa4f468e3,2025-11-17T05:35:10,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,732,2
+2025-11-17T06:41:40.183+05:30,935,,13.5,2.4,111,,,,,607364357,629262c5-0824-4dc7-b7f7-a0bba24373b4,2025-11-17T05:35:11,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,733,2
+2025-11-17T06:44:02.731+05:30,937,,14,3,111,,,,Dolphins and birds,607364365,c30862ea-73ec-4f57-bb68-8319f25fba7d,2025-11-17T05:35:12,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,734,2
+2025-11-17T06:48:41.897+05:30,938,,12.5,4,211,,,,,607364369,b7176066-9ee2-40a1-ac84-1c5d43182524,2025-11-17T05:35:12,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,735,2
+2025-11-17T06:53:39.671+05:30,940,,12.5,5,211,,,,,607364373,0dfe9781-afe4-4eda-a66f-7ff5527bc2eb,2025-11-17T05:35:13,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,736,2
+2025-11-17T06:57:58.117+05:30,941,,13,6,111,,,,,607364376,0d4df626-53c7-4adc-aa42-933333ed4a51,2025-11-17T05:35:14,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,737,2
+2025-11-17T07:03:21.438+05:30,942,,13.5,7.2,211,,,,,607364380,0923bb86-8625-417d-a75a-c0df816ea4e2,2025-11-17T05:35:14,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,738,2
+2025-11-17T07:06:42.735+05:30,943,,13.9,8,211,,,,,607364384,4301d1b8-7d95-41ab-bf90-3313d0b3d6bb,2025-11-17T05:35:15,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,739,2
+2025-11-17T07:11:25.223+05:30,944,,14.5,9,311,,,,Rough sea makes spotting difficult,607364387,c5fc7bfb-45da-4352-aac3-82f7ceafbe62,2025-11-17T05:35:15,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,740,2
+2025-11-17T07:17:18.701+05:30,945,,12.8,10.35,311,,,,,607364389,84ee35b3-6d56-43b8-bd3c-adcabf218348,2025-11-17T05:35:16,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,741,2
+2025-11-17T07:20:54.116+05:30,947,,12.9,11.1,311,,,,1 jet ski,607364396,bb03c12a-5afc-4ffe-9088-256220111dfb,2025-11-17T05:35:17,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,742,2
+2025-11-17T07:24:20.452+05:30,949,,14,12,311,,,,,607364403,58a35e4a-0df8-49d8-a154-fc2c185f6fbd,2025-11-17T05:35:18,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,743,2
+2025-11-17T07:28:39.396+05:30,950,,13.9,13,211,,,,,607364405,fd242fec-2c6a-4d69-b2ab-f3cb2c72fc44,2025-11-17T05:35:19,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,744,2
+2025-11-17T07:33:22.372+05:30,951,,14.3,14,221,,,,,607364406,58e0bfa2-b82f-43f9-86eb-94a315df92f6,2025-11-17T05:35:19,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,745,2
+2025-11-17T07:37:45.303+05:30,952,,14.5,15,211,,,,,607364411,aefb72b9-1cb6-498c-a6e2-5d1489debc5e,2025-11-17T05:35:20,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,746,2
+2025-11-17T07:41:53.783+05:30,953,,13.5,16,211,,,,,607364415,3fea56db-6d84-4c2b-92c5-47ab5177f8de,2025-11-17T05:35:20,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,747,2
+2025-11-17T07:48:05.636+05:30,954,,13.8,17.4,211,,,,,607364419,cd60efb6-fa52-4aa9-a68c-ba0715432f03,2025-11-17T05:35:21,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,748,2
+2025-11-17T07:50:34.069+05:30,955,,14,18,211,,,,,607364423,9d625799-53ff-436b-a84a-9c2b0af57b35,2025-11-17T05:35:21,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,749,2
+2025-11-17T07:55:12.859+05:30,956,,14,19,211,,,,,607364427,9ce39b60-7b2e-4c06-a6da-1c7f21851299,2025-11-17T05:35:22,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,750,2
+2025-11-17T07:59:04.441+05:30,957,,14.4,20,211,,,,,607364434,f38456e7-77e7-4842-a197-e3f99b2f23a4,2025-11-17T05:35:22,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,751,2
+2025-11-17T08:09:25.257+05:30,958,,14,22.3,211,,,,,607364442,f52bf538-4ed9-4f30-a6b3-53171404556f,2025-11-17T05:35:23,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,752,2
+2025-11-17T08:13:07.086+05:30,959,,13.5,23.15,111,,,,,607364448,33c84c5a-da6f-452e-832e-d2d1304070f0,2025-11-17T05:35:24,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,753,2
+2025-11-17T08:16:37.331+05:30,960,,14.3,24,111,,,,,607364453,7d570f43-7fc5-4d97-bea9-5ed22a438cd9,2025-11-17T05:35:24,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,754,2
+2025-11-17T08:26:37.134+05:30,961,,13.6,26.3,111,,,,,607364458,f857132e-9ecc-44bb-b3a5-611e6f5ac22a,2025-11-17T05:35:25,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,755,2
+2025-11-17T08:29:44.859+05:30,962,,13.7,27,111,,,,,607364462,d539ae3b-d0a3-4a8f-ad86-ec162743d888,2025-11-17T05:35:25,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,756,2
+2025-11-17T08:33:45.110+05:30,963,,14.3,28,111,,,,,607364467,86fadce3-a3e2-4353-bd3f-0c2d32fd6074,2025-11-17T05:35:26,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,757,2
+2025-11-17T08:42:42.016+05:30,964,,13.5,30,111,,,,,607364472,b472f717-35ee-4439-9caf-7366ec86b0b3,2025-11-17T05:35:26,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,758,2
+2025-11-17T08:47:00.201+05:30,966,,14,31,111,,,,,607364479,08089b9a-8cf8-4a69-a0c6-b60849d14827,2025-11-17T05:35:27,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,759,2
+2025-11-17T08:51:19.036+05:30,968,,13.5,32,111,,,,,607364485,a59b4ab5-e209-42bf-9d9f-a9f902c0d8e5,2025-11-17T05:35:28,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,760,2
+2025-11-17T08:55:40.106+05:30,969,,14,33,111,,,,,607364491,58efd9d4-105e-41cc-b2da-b93d93139e67,2025-11-17T05:35:29,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,761,2
+2025-11-17T08:59:55.747+05:30,970,,14,34,111,,,,,607364495,64cb339b-ff7e-4564-ac13-c753e9f1d6cd,2025-11-17T05:35:29,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,762,2
+2025-11-17T09:04:31.072+05:30,971,,14,35,111,,,,,607364504,3b40d371-b1a9-4a41-becd-fcd2a7ac170e,2025-11-17T05:35:30,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,763,2
+2025-11-17T09:08:54.106+05:30,972,,13.5,36,111,,,,,607364512,8d8ba569-5b44-45f5-adc4-3a12f159867c,2025-11-17T05:35:30,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,764,2
+2025-11-17T09:14:17.603+05:30,973,,14.7,37.3,111,,,,,607364518,7cc3e487-b23e-4cca-abe9-b93821449d68,2025-11-17T05:35:31,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,765,2
+2025-11-17T09:17:32.892+05:30,974,,14,38.1,111,,,,,607364523,42fe7fdd-1fbd-4444-93c3-0dcf8d3cbc54,2025-11-17T05:35:31,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,766,2
+2025-11-17T09:21:44.913+05:30,975,,13.6,39.1,111,,,,,607364528,2b235e2b-0099-439b-b5dc-d8291f3f8c63,2025-11-17T05:35:32,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,767,2
+2025-11-17T09:25:58.494+05:30,976,,14.2,40,211,,,,,607364534,ef77ed01-fcc4-447c-9969-67fb51c52eaa,2025-11-17T05:35:32,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,768,2
+2025-11-17T09:30:06.369+05:30,978,,14,41,211,,,,,607364557,8a594217-fd41-4446-a32c-84decd828bc5,2025-11-17T05:35:34,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,769,2
+2025-11-17T09:33:29.239+05:30,979,,14.7,42,211,,,,,607364563,f845d527-45f4-4c32-b3c1-d20062ebdb32,2025-11-17T05:35:34,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,770,2
+2025-11-17T09:38:07.818+05:30,981,,13.9,43,211,,,,,607364568,fe77c122-fb53-4011-bc94-45faca028696,2025-11-17T05:35:36,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,771,2
+2025-11-17T09:42:21.872+05:30,983,,14.8,44,211,,,,,607364574,021b994a-06e9-44c6-8d6e-f802e276bc21,2025-11-17T05:35:36,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,772,2
+2025-11-17T09:47:23.632+05:30,988,,13.8,45,211,,,,,607364595,0bc042db-0548-4e8e-be0d-fec9d57ae143,2025-11-17T05:35:40,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,773,2
+2025-11-17T09:51:30.038+05:30,989,,13,46,211,,,,,607364596,163a1596-a33e-4603-b55a-bd265cd8213c,2025-11-17T05:35:40,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,774,2
+2025-11-17T09:55:39.735+05:30,990,,13.6,47,211,,,,,607364598,a768c0c4-c222-428d-bce4-fe9253fd5c4f,2025-11-17T05:35:41,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,775,2
+2025-11-17T10:00:27.613+05:30,992,,12.5,48,221,,,,,607364602,726b3a47-9699-42d3-925a-020f83c68554,2025-11-17T05:35:42,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,776,2
+2025-11-17T10:05:30.038+05:30,993,,11.6,49,221,,,,Mormugao bay ,607364603,17a4c3b4-b81d-4b90-ba5f-712de3e05807,2025-11-17T05:35:42,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,777,2
+2025-11-17T10:10:23.182+05:30,994,,12,50,221,,,,,607364605,6e8c2cdd-8de8-4f20-b0a0-cc6a0e5fd3e1,2025-11-17T05:35:43,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,778,2
+2025-11-17T10:17:03.614+05:30,955,,13.3,51.2,321,,,,,607364612,3d8423a8-691e-4de9-a114-05514abc1506,2025-11-17T05:35:43,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,779,2
+2025-11-17T10:21:31.745+05:30,996,,13,52.1,321,,,,,607364615,fe7e7eaa-791a-40cd-992a-2a2b8fd93b0b,2025-11-17T05:35:44,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,780,2
+2025-11-17T10:25:42.308+05:30,997,,12.6,53,321,,,,,607364617,971a9934-12e8-4cbd-b30f-105223166130,2025-11-17T05:35:44,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,781,2
+2025-11-17T10:30:09.860+05:30,998,,12.6,54,321,,,,,607364618,efdb9da6-6958-4d9c-ba47-35d64acd6bf6,2025-11-17T05:35:44,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,782,2
+2025-11-17T10:34:41.968+05:30,999,,14.3,55,211,,,,,607364620,88fc67fb-a304-4eaf-9cec-b14098430602,2025-11-17T05:35:45,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,783,2
+2025-11-17T10:38:54.470+05:30,1000,,14.5,56,211,,,,,607364623,bce3b322-6711-45e4-9926-05c9495f0f18,2025-11-17T05:35:45,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,784,2
+2025-11-17T10:43:03.060+05:30,1,,15.6,57,211,,,,,607364625,1ed533a7-47e9-42e1-848b-ff17b7f8fe98,2025-11-17T05:35:46,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,785,2
+2025-11-17T10:47:03.800+05:30,2,,15,58,211,,,,,607364629,864d747f-eb64-40c2-a55c-b97e8c33623b,2025-11-17T05:35:46,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,786,2
+2025-11-17T10:50:50.171+05:30,3,,14.6,59,211,,,,,607364634,e6d3b808-fcfc-4fb5-b923-bee0b740f840,2025-11-17T05:35:47,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,787,2
+2025-11-17T10:55:24.210+05:30,4,,13,60,211,,,,,607364640,b34f2817-a99c-4b1e-a4d6-760502a4e44f,2025-11-17T05:35:47,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,788,2
+2025-11-17T11:00:13.775+05:30,7,,12,61,211,,,,,607364653,5b37e3fa-85a9-43f2-87bb-0dd705bf5daa,2025-11-17T05:35:49,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,789,2
+2025-11-17T11:04:20.608+05:30,8,,14.8,62,211,,,,Survey ends miramar,607364660,0891bc88-f84a-4c96-9357-0a4de7cf1c2e,2025-11-17T05:35:49,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,790,2
+2025-11-18T06:38:38.325+05:30,8,2,14,0,111,2,,,Survey starts miramar to morjim via querim,608305771,c654465e-5b39-4999-b8ab-ddfb0a8221a5,2025-11-18T05:19:15,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,791,2
+2025-11-18T06:43:02.194+05:30,9,,14,1,111,2,,,,608305777,2f9b81a9-da89-4f8c-bfcb-4c8f23e895ed,2025-11-18T05:19:15,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,792,2
+2025-11-18T06:47:23.403+05:30,10,,14,2,111,,,,,608305787,3d85a083-fe3c-4e82-955e-b0f2ae84fe09,2025-11-18T05:19:16,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,793,2
+2025-11-18T06:51:51.194+05:30,12,,13.6,3,211,,,,Low Swells,608305793,e3709ef7-90ca-4af7-bfda-fdf823c28388,2025-11-18T05:19:17,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,794,2
+2025-11-18T06:56:16.718+05:30,13,,12.6,4,211,,,,Ps travelling out ,608305800,d88545cf-70de-40be-aec3-ae5a6b4f3c7f,2025-11-18T05:19:17,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,795,2
+2025-11-18T07:00:51.217+05:30,14,,12.6,5,211,,,,,608305803,a414868f-6e31-47d1-9424-f2479eccef6c,2025-11-18T05:19:18,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,796,2
+2025-11-18T07:05:19.789+05:30,15,,13.6,6,211,,2,,Trawlers,608305807,aeb1935a-99ab-4b23-bd83-79b54937fa18,2025-11-18T05:19:18,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,797,2
+2025-11-18T07:10:08.528+05:30,16,,14,7,211,,,,,608305809,9d457c14-e271-4ff2-a241-393bf66737b6,2025-11-18T05:19:19,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,798,2
+2025-11-18T07:15:09.772+05:30,17,,12.5,8,211,,1,,,608305814,2921aad0-6ae1-41db-9c2e-e33035cc5e38,2025-11-18T05:19:19,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,799,2
+2025-11-18T07:20:03.287+05:30,18,,13,9,211,,1,,,608305818,98c8e5c2-620f-42e6-9312-1342d81ae90f,2025-11-18T05:19:20,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,800,2
+2025-11-18T07:24:07.656+05:30,19,,12.9,10,111,,1,,Trawler,608305820,1068f024-2a76-4b79-9f02-aee19bb8d071,2025-11-18T05:19:20,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,801,2
+2025-11-18T07:30:01.539+05:30,20,,13,11.1,111,,,,Many gulls and kites fighting,608305823,21b5588f-1ef2-4911-ae9c-e1b7cbbd636b,2025-11-18T05:19:21,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,802,2
+2025-11-18T07:36:05.514+05:30,23,,13,12,111,,,,,608305854,1ddebb44-6532-4656-a7af-1fd7b25598ac,2025-11-18T05:19:24,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,803,2
+2025-11-18T07:39:34.663+05:30,27,,12.5,13,111,,,,,608305877,58b861c6-86a7-4af8-bc03-d70eb2d561b6,2025-11-18T05:19:26,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,804,2
+2025-11-18T07:45:00.073+05:30,32,,12.3,14,111,,,,,608305924,1350518e-a94e-4fd9-8eb6-978b4bd391bb,2025-11-18T05:19:30,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,805,2
+2025-11-18T07:49:10.648+05:30,34,,12.1,15,111,,,,,608305939,705f7ab5-f4e6-4f9c-aed0-7d19683df26d,2025-11-18T05:19:32,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,806,2
+2025-11-18T07:55:09.686+05:30,35,,12.2,16.1,111,,,,Swells,608305946,f459a8ae-0fc0-4718-aaf2-57eddeba1361,2025-11-18T05:19:32,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,807,2
+2025-11-18T08:00:11.140+05:30,36,,13.3,17.2,111,,,,,608305956,8c20bd2e-ecce-4cba-8dc2-526d98da2d8c,2025-11-18T05:19:33,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,808,2
+2025-11-18T08:04:42.558+05:30,37,,10,18,111,,,,,608305961,949c3d8f-d042-463f-ab9a-f6f8c67ccae3,2025-11-18T05:19:33,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,809,2
+2025-11-18T08:13:30.370+05:30,38,,13.6,20,211,,,,,608305966,b0549345-2c74-4975-9472-dd7da3d71868,2025-11-18T05:19:34,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,810,2
+2025-11-18T08:18:22.940+05:30,39,,13.5,21,311,,,,Strong waves,608305971,276e0c35-b62d-45b9-8707-7f92d279e50d,2025-11-18T05:19:34,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,811,2
+2025-11-18T08:23:08.560+05:30,40,,12.5,22,311,1,,,Gillneter. Strong waves,608305980,0c7b71c9-e6d0-4532-8a1c-4acdc50b700b,2025-11-18T05:19:35,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,812,2
+2025-11-18T08:28:12.174+05:30,42,,11,23,311,,,,,608306002,0dea9f33-f812-4fb7-80ba-6fc84ec75b73,2025-11-18T05:19:37,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,813,1
+2025-11-18T08:34:13.250+05:30,43,,12.7,24.2,311,,,,,608306026,4f6cb699-02fa-4507-b65b-110549b21a5c,2025-11-18T05:19:39,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,814,1
+2025-11-18T08:38:06.078+05:30,44,,13.5,25,211,,,,Reduced wind,608306032,484c9278-2262-4150-9af9-d809926501ab,2025-11-18T05:19:39,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,815,1
+2025-11-18T08:47:33.343+05:30,45,,12.9,27,311,,,,,608306035,1bac7f96-79f6-4c0c-8eb5-f9fc691c03a5,2025-11-18T05:19:40,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,816,1
+2025-11-18T09:02:03.610+05:30,47,,12.8,30,311,,,,,608306045,9bf91129-f528-49dc-b53a-0578c825e970,2025-11-18T05:19:41,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,817,1
+2025-11-18T09:07:04.960+05:30,48,,12,31.1,211,,,,,608306051,82679fd6-699e-4a14-a1ea-a0aeddf67a81,2025-11-18T05:19:42,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,818,1
+2025-11-18T09:11:14.089+05:30,49,,12.2,32,211,,,,,608306063,2c40a2f9-2de9-49eb-8271-d9588bc87c25,2025-11-18T05:19:43,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,819,1
+2025-11-18T09:15:53.891+05:30,50,,12.6,33,211,,,,,608306090,e0e4288f-94b2-4e17-8767-97805765b44e,2025-11-18T05:19:45,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,820,1
+2025-11-18T09:20:29.685+05:30,51,,13,34,211,,,,,608306095,93b0749f-2986-49e3-8931-caf48501184b,2025-11-18T05:19:45,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,821,1
+2025-11-18T09:26:38.233+05:30,52,,13,35,211,,,,,608306103,c3f1a081-770b-40fd-b408-638d52816ea8,2025-11-18T05:19:46,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,822,1
+2025-11-18T09:31:55.542+05:30,53,,13,36.15,211,,,,,608306110,e419a469-f56c-474e-a340-6e3bc1b34d26,2025-11-18T05:19:47,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,823,1
+2025-11-18T09:36:17.419+05:30,54,,14,37.1,211,1,,,End of goa. Returning now,608306117,c2a59165-57fd-4c05-bb58-f3db2f56138d,2025-11-18T05:19:47,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,824,1
+2025-11-18T09:43:59.927+05:30,55,,13.9,39,211,,,,,608306125,e5cd8846-a1cc-4106-a4e7-14401a8d4978,2025-11-18T05:19:48,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,825,2
+2025-11-18T09:48:22.136+05:30,56,,13.9,40,211,,,,,608306132,7d496f91-4ceb-4aed-a5d3-6ddbceb07a3f,2025-11-18T05:19:48,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,826,2
+2025-11-18T09:54:40.347+05:30,57,,14,41.4,211,,,,,608306139,9c3854c2-0dfd-41d4-86a8-57585db9e055,2025-11-18T05:19:49,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,827,2
+2025-11-18T09:57:16.028+05:30,58,,13.5,42,211,,,,,608306147,ecde4127-6aec-4b57-9845-68d1bccd8491,2025-11-18T05:19:49,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,828,2
+2025-11-18T10:01:36.288+05:30,59,,14,43,211,,,,,608306153,20de8ce1-fe44-4f8e-9788-f35903ff4583,2025-11-18T05:19:50,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,829,2
+2025-11-18T10:07:12.692+05:30,60,,11.2,44,311,,,,,608306159,7e6302d1-cf84-423c-a9d3-ceca7cd7a640,2025-11-18T05:19:50,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,830,2
+2025-11-18T10:15:48.448+05:30,61,,10.5,46,321,1,,,,608306164,50594e62-b884-4ce7-89f8-4c620b261afe,2025-11-18T05:19:51,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,831,2
+2025-11-18T10:21:29.757+05:30,62,,13,47.1,321,,,,Strong winds name it difficult to choose a zigzag path,608306186,2e65a7b1-5378-470c-bb6f-8a42c323f27e,2025-11-18T05:19:53,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,832,2
+2025-11-18T10:25:29.473+05:30,63,,12.2,48,331,,,,,608306199,915ce488-49a7-468c-86b8-0044616aa0f8,2025-11-18T05:19:53,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,833,2
+2025-11-18T10:29:51.525+05:30,64,,14.5,49,221,,,,2 mps travelling,608306208,e4f1b23a-38d1-46a8-bbab-05f0b4628a59,2025-11-18T05:19:54,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,834,2
+2025-11-18T10:34:12.998+05:30,65,,13.6,50,321,,,,,608306212,3aace31e-d195-4848-9ab2-3e46f37dfa41,2025-11-18T05:19:54,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,835,2
+2025-11-18T10:38:46.331+05:30,66,,12.9,51,221,,,,,608306218,0b71cd7b-be1b-4ee6-bdf3-be1b5f163121,2025-11-18T05:19:55,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,836,2
+2025-11-18T10:43:50.853+05:30,67,,11,52,231,,,,,608306228,89fb7ff4-95a5-4800-8a92-ad0582317f89,2025-11-18T05:19:56,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,837,2
+2025-11-18T10:47:04.728+05:30,68,,7.2,52.5,121,,,1,"End survey morjim
+Strong waves when entering",608306232,a79343ed-3a04-4112-9307-d044ec8cec46,2025-11-18T05:19:56,,,submitted_via_web,imran__samad,v8BmeYgSvybS8WAcqZ3YHv,,838,2

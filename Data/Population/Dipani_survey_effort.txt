@@ -1,0 +1,16 @@
+There were 20 transects (blocks) of roughly equal length. The following are the number of replicates done for each block (e.g., 2 blocks with 5 replicates, 3 with 4 reps, etc.)
+
+2x5
+3x4
+8x3
+6x2
+1x1
+
+Total effort = 678. Assuming these blocks are of equal length, effort (distance) per BLOCK was 678/(10+12+12+12+1) = 14.4km
+
+Therefore, effort per REPLICATE is
+28.8
+43.2
+115.2
+86.4
+14.4

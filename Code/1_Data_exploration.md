@@ -1,33 +1,34 @@
----
-title: "Data Exploration"
-description: "Exploratory analysis of stranding records, reviewer estimates, and spatial mapping of survey data"
-format: gfm
-keep-md: true
-output: "../Results/1_Data_exploration.md"
-execute:
-  warning: false
-  message: false
----
+Data Exploration
+================
 
 # Overview
 
-This document is structured around the three analytical components in the project workflow:
+This document is structured around the three analytical components in
+the project workflow:
 
-1. exploratory summaries of stranding records,
-2. comparison of reviewer estimates with self-reported decomposition and PMI scores, and
-3. spatial mapping of fishing and tourist activity from survey data.
+1.  exploratory summaries of stranding records,
+2.  comparison of reviewer estimates with self-reported decomposition
+    and PMI scores, and
+3.  spatial mapping of fishing and tourist activity from survey data.
 
-The code below is organized by section so that the rationale, the implementation, and the resulting output are easy to follow.
+The code below is organized by section so that the rationale, the
+implementation, and the resulting output are easy to follow.
 
 ## 1. Stranding data exploration
 
-The first section reads the stranding dataset, keeps only valid records from the study period, and restricts analysis to the two focal species. It then summarizes basic monthly patterns, age structure, and death-code composition.
+The first section reads the stranding dataset, keeps only valid records
+from the study period, and restricts analysis to the two focal species.
+It then summarizes basic monthly patterns, age structure, and death-code
+composition.
 
 ### Data import and filtering
 
-This chunk sets up the analysis and reduces the dataset to the two focal species and valid records from 2017 onward. The filtering step is important because it removes flagged records and keeps the time window used for the study.
+This chunk sets up the analysis and reduces the dataset to the two focal
+species and valid records from 2017 onward. The filtering step is
+important because it removes flagged records and keeps the time window
+used for the study.
 
-```{r}
+``` r
 library(tidyverse)
 library(ggpubr)
 library(sf)
@@ -45,7 +46,13 @@ dat_str <- dat_str |>
 dat_str |>
   count(Species_co, name = "n") |>
   arrange(desc(n))
+```
 
+                         Species_co   n
+    1              Humpback dolphin 314
+    2 Indo-Pacific finless porpoise 173
+
+``` r
 # Monthly totals by species: a first pass at seasonality before deeper summaries.
 dat_str |>
   ggplot(aes(x = as.factor(Month))) +
@@ -53,7 +60,11 @@ dat_str |>
   facet_wrap(~Species_co, ncol = 1) +
   labs(x = "Month", y = "Total strandings") +
   theme_minimal()
+```
 
+![](1_Data_exploration_files/figure-commonmark/unnamed-chunk-1-1.png)
+
+``` r
 # Mean monthly stranding rates with uncertainty (SE) for both species
 dat_str |>
   group_by(Year, Month, Species_co) |>
@@ -88,19 +99,27 @@ dat_str |>
   labs(x = "Month", y = "No. of strandings (mean ± SE)", colour = "Species")
 ```
 
+![](1_Data_exploration_files/figure-commonmark/unnamed-chunk-1-2.png)
+
 ### Result
 
-The monthly pattern is easiest to interpret by tracking the seasonal peak across the two focal taxa, and the figure highlights whether the period of highest stranding risk is consistent across species.
+The monthly pattern is easiest to interpret by tracking the seasonal
+peak across the two focal taxa, and the figure highlights whether the
+period of highest stranding risk is consistent across species.
 
 ## 2. Reviewer estimate comparison
 
-This section compares reviewer estimates for decomposition and PMI against the self-reported values. It calculates the average of reviewer scores and then derives percentage differences from the self-assessment.
+This section compares reviewer estimates for decomposition and PMI
+against the self-reported values. It calculates the average of reviewer
+scores and then derives percentage differences from the self-assessment.
 
 ### Reviewer agreement calculation
 
-This section calculates the mean reviewer score for each case and then derives the percentage difference from the self-reported decomposition and PMI values.
+This section calculates the mean reviewer score for each case and then
+derives the percentage difference from the self-reported decomposition
+and PMI values.
 
-```{r}
+``` r
 decomp <- read.csv("../Data/Decomposition_estimates.csv")
 
 decomp <- decomp |>
@@ -137,24 +156,64 @@ mean_decomp_summary <- tibble(
 mean_decomp_summary
 ```
 
-This summary quantifies the average percentage divergence between self-assessment and reviewer scores, with the corresponding spread reported as the standard deviation.
+    # A tibble: 3 × 3
+      metric mean_percent_diff sd_percent_diff
+      <chr>              <dbl>           <dbl>
+    1 DC                  18.2            16.9
+    2 PMIl               127.             93.6
+    3 PMIu               219.            139. 
+
+This summary quantifies the average percentage divergence between
+self-assessment and reviewer scores, with the corresponding spread
+reported as the standard deviation.
 
 ### Result
 
-The table shows the average deviation and spread for each metric; a low mean difference suggests stronger agreement between self-assessment and the review panel, while a larger standard deviation suggests inconsistency among evaluators.
+The table shows the average deviation and spread for each metric; a low
+mean difference suggests stronger agreement between self-assessment and
+the review panel, while a larger standard deviation suggests
+inconsistency among evaluators.
 
 ## 3. Spatial mapping of boat survey activity
 
-The final section loads the Goan coastal grid and coastline, processes GPX route data, and estimates average fishing and tourist boat activity within each grid cell. A side-by-side map layout is used for visual comparison.
+The final section loads the Goan coastal grid and coastline, processes
+GPX route data, and estimates average fishing and tourist boat activity
+within each grid cell. A side-by-side map layout is used for visual
+comparison.
 
 ### Annotation: spatial aggregation logic
 
-The function below matches each boat-survey waypoint to the appropriate grid cell, aggregates counts across all survey events, and then calculates the average fishing and tourist activity per grid cell.
+The function below matches each boat-survey waypoint to the appropriate
+grid cell, aggregates counts across all survey events, and then
+calculates the average fishing and tourist activity per grid cell.
 
-```{r}
+``` r
 goa_grid <- st_read("../Data/Shp files/Goa_buffer_5km_grid.shp")
-goa_coast <- st_read("../Data/Shp files/Goa_coast.shp")
+```
 
+    Reading layer `Goa_buffer_5km_grid' from data source 
+      `C:\Users\imran\OneDrive - Indian Institute of Science\IISc files\IISC\Thesis\Quantifying cetacean bycatch\Goa_cetacean_mortality\Data\Shp files\Goa_buffer_5km_grid.shp' 
+      using driver `ESRI Shapefile'
+    Simple feature collection with 264 features and 5 fields
+    Geometry type: POLYGON
+    Dimension:     XY
+    Bounding box:  xmin: 73.57256 ymin: 14.72646 xmax: 74.17256 ymax: 15.82646
+    Geodetic CRS:  WGS 84
+
+``` r
+goa_coast <- st_read("../Data/Shp files/Goa_coast.shp")
+```
+
+    Reading layer `Goa_coast' from data source 
+      `C:\Users\imran\OneDrive - Indian Institute of Science\IISc files\IISC\Thesis\Quantifying cetacean bycatch\Goa_cetacean_mortality\Data\Shp files\Goa_coast.shp' 
+      using driver `ESRI Shapefile'
+    Simple feature collection with 1 feature and 1 field
+    Geometry type: POLYGON
+    Dimension:     XY
+    Bounding box:  xmin: 73.67573 ymin: 14.89598 xmax: 74.14714 ymax: 15.74199
+    Geodetic CRS:  WGS 84
+
+``` r
 process_gpx_and_s1 <- function(gpx_folders, s1_files, goa_grid) {
   results <- map2_dfr(gpx_folders, s1_files, function(folder, s1_file) {
     s1 <- read.csv(s1_file)
@@ -238,8 +297,15 @@ map_FN <- ggplot() +
 ggpubr::ggarrange(map_TB, map_FN, ncol = 2, common.legend = FALSE)
 ```
 
-This figure compares average tourist and fishing activity across the grid, which is useful for identifying spatial overlap with observed cetacean mortality patterns.
+![](1_Data_exploration_files/figure-commonmark/unnamed-chunk-3-1.png)
+
+This figure compares average tourist and fishing activity across the
+grid, which is useful for identifying spatial overlap with observed
+cetacean mortality patterns.
 
 ### Result
 
-The two-map panel allows spatial comparison of tourist and fishing intensity. Areas of high tourism and fisheries activities also seem to concentrate around areas of high cetacean mortality (although not fully).
+The two-map panel allows spatial comparison of tourist and fishing
+intensity. Areas of high tourism and fisheries activities also seem to
+concentrate around areas of high cetacean mortality (although not
+fully).

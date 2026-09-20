@@ -1,10 +1,9 @@
 ---
 title: "Estimating stranding probability"
 description: "Workflow for estimating coastal stranding probability from particle trajectories and coastline grid cells."
-format:
-  html:
-    toc: true
-    code-fold: false
+format: gfm
+keep-md: true
+output: "../Results/3_Estimating_stranding_prob.md"
 execute:
   echo: true
   eval: false

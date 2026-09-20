@@ -1,30 +1,28 @@
----
-title: "Estimating dolphin density"
-description: "Workflow for estimating dolphin density from distance sampling data."
-format: gfm
-keep-md: true
-output: "../Results/2_Density_estimation.md"
-execute:
-  warning: false
-  message: false
----
+Estimating dolphin density
+================
 
 # Overview
 
-This code implements the distance sampling approach to estimate dolphin densities for the five surveys. The major steps include cleaning, distance transformation, model fitting, and abundance calculation. The workflow is designed to be modular, so that each survey can be processed independently while maintaining a consistent analytical structure.
+This code implements the distance sampling approach to estimate dolphin
+densities for the five surveys. The major steps include cleaning,
+distance transformation, model fitting, and abundance calculation. The
+workflow is designed to be modular, so that each survey can be processed
+independently while maintaining a consistent analytical structure.
 
 The document is organized as follows:
 
-1. setup and reusable helpers,
-2. survey metadata and file mapping,
-3. estimation workflow for each survey, and
-4. summary plots and abundance output.
+1.  setup and reusable helpers,
+2.  survey metadata and file mapping,
+3.  estimation workflow for each survey, and
+4.  summary plots and abundance output.
 
 ## 1. Setup and helper functions
 
-The first segment loads the required packages, and creates reusable functions for preparing the encoded detection data and fitting the distance model.
+The first segment loads the required packages, and creates reusable
+functions for preparing the encoded detection data and fitting the
+distance model.
 
-```{r}
+``` r
 project_root <- getwd()
 
 knitr::opts_knit$set(root.dir = project_root)
@@ -121,9 +119,12 @@ fit_distance_model <- function(dist_data, truncation, region_table, sample_table
 
 ## 2. Survey metadata
 
-Each survey uses a different raw data file, truncation distance, survey area, and effort vector. The metadata below keeps those choices explicit and centralised, so the model-fitting workflow remains easy to read and update.
+Each survey uses a different raw data file, truncation distance, survey
+area, and effort vector. The metadata below keeps those choices explicit
+and centralised, so the model-fitting workflow remains easy to read and
+update.
 
-```{r}
+``` r
 survey_specs <- tribble(
   ~survey_id, ~location_file, ~covariates_file, ~truncation, ~area, ~effort, ~adjustment,
   "2312", file.path(project_root, "Data/Population/Dolphins_locations_2312.csv"), file.path(project_root, "Data/Population/Dolphins_covariates_2312.csv"), 600, 347 / 2 * 600 / 1000 * 2, I(list(c(26.3, 20.2, 42.1, 59.2, 55.3 - 8.6, 42.4 + 8.6, 63.8, 37.3))), "poly",
@@ -141,15 +142,24 @@ survey_specs <- survey_specs |>
 survey_specs
 ```
 
+    # A tibble: 5 × 8
+      survey_id location_file         covariates_file truncation  area effort       
+      <chr>     <chr>                 <chr>                <dbl> <dbl> <list>       
+    1 2312      C:/Users/imran/OneDr… C:/Users/imran…        600  208. <I(list [1])>
+    2 2504      C:/Users/imran/OneDr… C:/Users/imran…        500  155  <I(list [1])>
+    3 2511      C:/Users/imran/OneDr… C:/Users/imran…        500  164  <I(list [1])>
+    4 2602      C:/Users/imran/OneDr… C:/Users/imran…        500  132. <I(list [1])>
+    5 0202      C:/Users/imran/OneDr… <NA>                   400  240  <I(list [1])>
+    # ℹ 2 more variables: adjustment <chr>, files_exist <lgl>
+
 ## 3. Survey-specific analysis workflow
 
-This segment runs the same distance-sampling workflow for each survey that has a valid raw data file. The code performs four essential steps: data import, perpendicular-distance calculation, covariate matching, and model fitting.
+This segment runs the same distance-sampling workflow for each survey
+that has a valid raw data file. The code performs four essential steps:
+data import, perpendicular-distance calculation, covariate matching, and
+model fitting.
 
-```{r}
-#| results: hide
-#| warning: false
-#| message: false
-
+``` r
 results_list <- list()
 
 if (any(survey_specs$files_exist)) {
@@ -230,20 +240,21 @@ if (any(survey_specs$files_exist)) {
 
 ### Notes on the model specification
 
-- perpendicular distance is converted from metres to a detection-distance variable,
+- perpendicular distance is converted from metres to a
+  detection-distance variable,
 - covariates are standardised when present,
-- a half-normal key function is used with a polynomial adjustment in most modern surveys,
+- a half-normal key function is used with a polynomial adjustment in
+  most modern surveys,
 - the February 2002 file follows a cosine adjustment instead,
-- effort is entered per survey replicate using the original track-length estimates.
+- effort is entered per survey replicate using the original track-length
+  estimates.
 
 ## 4. Results summary and abundance extraction
 
-This section extracts density and abundance estimates from each fitted model and stores them in a single summary table.
+This section extracts density and abundance estimates from each fitted
+model and stores them in a single summary table.
 
-```{r}
-#| warning: false
-#| message: false
-
+``` r
     # The values for all the models above are manually extracted and stroed in a dataframe for visualisation
   pop <- bind_rows(  
   tibble(
@@ -311,14 +322,21 @@ This section extracts density and abundance estimates from each fitted model and
 pop
 ```
 
+    # A tibble: 5 × 10
+         Sl  Year Month Season Density Density_se Abundance Abundance_se   lcl   ucl
+      <dbl> <dbl> <dbl> <chr>    <dbl>      <dbl>     <dbl>        <dbl> <dbl> <dbl>
+    1     1  2023    12 Winter    1.64      0.35       426.          91   271.  668.
+    2     2  2025     4 Summer    2.03      0.690      529.         180.  248. 1128.
+    3     3  2025    11 Winter    2.03      0.516      527.         134.  300.  926.
+    4     4  2026     2 Winter    2.56      0.434      665.         113.  455.  970.
+    5     5  2002     2 Spring    3.65      0.594      948.         154.  685. 1312.
+
 ## 5. Abundance plot
 
-The final graph reproduces the original manuscript-style abundance summary by plotting abundance with confidence intervals against month.
+The final graph reproduces the original manuscript-style abundance
+summary by plotting abundance with confidence intervals against month.
 
-```{r}
-#| warning: false
-#| message: false
-
+``` r
 if (nrow(pop) > 0) {
   fig_pop <- pop |>
     mutate(Season = factor(Season, levels = c("Spring", "Summer", "Winter"))) |>
@@ -349,6 +367,12 @@ if (nrow(pop) > 0) {
 }
 ```
 
+![](2_Density_estimation_files/figure-commonmark/unnamed-chunk-5-1.png)
+
 # Interpretation
 
-The workflow estimates dolphin density from multiple surveys by combining the raw sighting distances, nearest covariates, and replicate-specific effort. The summary table is then used to compare seasonal abundance, while the final graph displays the estimated abundance and confidence intervals across the survey periods.
+The workflow estimates dolphin density from multiple surveys by
+combining the raw sighting distances, nearest covariates, and
+replicate-specific effort. The summary table is then used to compare
+seasonal abundance, while the final graph displays the estimated
+abundance and confidence intervals across the survey periods.

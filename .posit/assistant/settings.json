@@ -1,0 +1,8 @@
+{
+  "permission": {
+    "edit": {
+      "*.qmd": "allow",
+      "*.R": "allow"
+    }
+  }
+}

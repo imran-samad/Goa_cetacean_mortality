@@ -1,0 +1,218 @@
+Mapping mortality
+================
+
+# Overview
+
+This code maps spatial mortality risk inferred from the stranding
+dataset. The workflow assigns each record to a spatial grid cell,
+applies a set of biological and distance-based filters, and then
+converts the retained records into a mortality index that can be
+visualised as a spatial surface across Goa.
+
+The analysis proceeds in four parts:
+
+1.  read and filter the raw stranding records,
+2.  assign each record to its corresponding grid cell,
+3.  apply the mortality filters and calculate the spatial index, and
+4.  generate the final map and output table.
+
+## 1. Data import and screening
+
+The first step reads the cleaned review dataset and restricts it to the
+focal taxon (Humpback dolphins) and records with valid location
+information. This keeps the analysis limited to the subset that can
+support a spatial mortality estimate.
+
+``` r
+library(tidyverse)
+library(sf)
+
+strand_records <- read.csv("../Results/Goa_rev.csv") |>
+  arrange(id, desc(Year), desc(Month), desc(Day)) |>
+  filter(flag == "FALSE" | flag == "" | is.na(flag)) |>
+  filter(Species_co == "Humpback dolphin") |>
+  filter(!is.na(lat))
+
+goa_grid <- st_read("../Data/Shp files/Grid_ecol_refined.shp", quiet = TRUE)
+goa_coast <- st_read("../Data/Shp files/Goa_coast.shp", quiet = TRUE)
+```
+
+### Result
+
+The filtered dataset contains the set of records that are appropriate
+for spatial mortality mapping, while the shoreline and coastal-grid
+layers define the spatial domain used for aggregation.
+
+## 2. Grid assignment logic
+
+Each stranding record is assigned to its corresponding grid cell by
+checking whether its point falls inside a polygon of the Goa grid.
+
+``` r
+is_in_polygon <- function(point_df, grid_sf) {
+  point_sf <- st_as_sf(
+    point_df,
+    coords = c("lon", "lat"),
+    crs = st_crs(grid_sf)
+  )
+
+  cell_intersections <- st_intersects(point_sf, grid_sf)
+  cell_match <- sapply(cell_intersections, function(x) {
+    if (length(x) == 1) x[1] else NA_integer_
+  })
+
+  data.frame(
+    yy = lengths(cell_intersections) == 1,
+    rec_id = cell_match,
+    stringsAsFactors = FALSE
+  )
+}
+
+assign_grid_id <- function(dat, grid_sf) {
+  point_assignments <- map_dfr(seq_len(nrow(dat)), function(i) {
+    pt <- dat[i, c("lon", "lat")]
+    is_in_polygon(pt, grid_sf)
+  })
+
+  dat$strand_id <- grid_sf$id[point_assignments$rec_id]
+  dat
+}
+```
+
+The function is applied over all spatial coordinates and returns the
+grid-cell index for records that fall inside the study grid.
+
+## 3. Distance-to-coast and raw spatial view
+
+The code computes the nearest distance from each record to the coastline
+and then displays the raw point locations over the grid and coast.
+
+``` r
+point_sf <- st_as_sf(
+  data.frame(
+    x = strand_records$lon,
+    y = strand_records$lat
+  ),
+  coords = c("x", "y"),
+  crs = 4326
+)
+
+strand_records <- strand_records |>
+  mutate(
+    dist_to_coast = as.numeric(st_distance(point_sf, goa_coast))
+  )
+
+strand_records <- assign_grid_id(strand_records, goa_grid)
+
+ggplot() +
+  geom_sf(data = goa_grid, fill = "white") +
+  geom_point(
+    data = strand_records,
+    mapping = aes(x = lon, y = lat, colour = as.factor(Month)),
+    size = 2,
+    alpha = 0.7
+  ) +
+  geom_sf(data = goa_coast, alpha = 0.3) +
+  theme_minimal() +
+  labs(
+    x = "Longitude",
+    y = "Latitude",
+    colour = "Month"
+  )
+```
+
+![](5_Mapping_mortality_files/figure-commonmark/unnamed-chunk-3-1.png)
+
+### Result
+
+This view provides the spatial context for the records before filtering;
+it helps check whether the stranding observations are concentrated near
+particular coastal areas or across the full grid.
+
+## 4. Mortality index calculation
+
+The mortality index is constructed from records that satisfy the timing
+filter and remain within the spatial range relevant to the study. Each
+record contributes a weight of $1/n$ for its unique carcass ID, so that
+multiple observations linked to the same event do not inflate a single
+mortality signal. Only grids that are \<5 km from the coast are retained
+and advection time is limited to the maximum post-mortem interval (PMI)
+for the species.
+
+``` r
+filtered_records <- strand_records |>
+  group_by(id) |>
+  filter(adv_time_days <= PMI_max) |>
+  filter(dist_to_coast < 5000)
+
+filtered_records <- filtered_records |>
+  group_by(id) |>
+  summarise(n = n(), .groups = "drop") |>
+  left_join(filtered_records, by = "id") |>
+  group_by(id) |>
+  mutate(MI = 1 / n)
+
+cell_mortality <- filtered_records |>
+  group_by(strand_id) |>
+  summarise(mortality = sum(MI, na.rm = TRUE), .groups = "drop")
+
+mortality_map_data <- goa_grid |>
+  left_join(cell_mortality, by = c("id" = "strand_id")) |>
+  filter(!is.na(mortality))
+```
+
+### Result
+
+The aggregated grid table gives a mortality index for each cell,
+representing the summed contribution from all retained records within
+that cell.
+
+## 5. Spatial mortality map
+
+The final map visualises the mortality index across the grid and
+highlights strata where the inferred mortality risk is greatest.
+
+``` r
+plot_mortality_map <- ggplot() +
+  geom_sf(data = mortality_map_data, aes(fill = mortality)) +
+  scale_fill_viridis_c(option = "plasma", na.value = "lightgrey") +
+  geom_sf(data = goa_coast, alpha = 0.3) +
+  geom_point(
+    data = filtered_records |> filter(adv_time_days == 0),
+    mapping = aes(x = lon, y = lat),
+    colour = "red",
+    size = 1,
+    alpha = 0.7
+  ) +
+  theme_minimal() +
+  labs(
+    x = "Longitude",
+    y = "Latitude",
+    fill = "Mortality index"
+  ) +
+  ggtitle("Spatial pattern of inferred mortality risk")
+
+plot_mortality_map
+```
+
+![](5_Mapping_mortality_files/figure-commonmark/unnamed-chunk-5-1.png)
+
+### Result
+
+The map identifies the coastal cells with the largest summed mortality
+index. These cells represent the areas where stranding evidence is most
+concentrated after applying the filters, and they are the most likely
+spatial hotspots of latent mortality risk.
+
+## 6. Output
+
+``` r
+write.csv(
+  mortality_map_data,
+  "../Results/Goa_rev_IOHD_maxPMI_5km.csv",
+  row.names = FALSE
+)
+```
+
+This final file stores the mapped mortality surface in a format that can
+be used in downstream summaries or figure generation.

@@ -12,10 +12,7 @@ the project workflow:
 3.  spatial mapping of fishing and tourist activity from survey data.
 
 The code below is organized by section so that the rationale, the
-implementation, and the resulting output are easy to follow. The
-plotting code uses `ggpubr::ggarrange()` instead of `patchwork` in the
-spatial section because `patchwork` currently raises an `sf`-related
-error in this R environment.
+implementation, and the resulting output are easy to follow.
 
 ## 1. Stranding data exploration
 
@@ -24,7 +21,7 @@ from the study period, and restricts analysis to the two focal species.
 It then summarizes basic monthly patterns, age structure, and death-code
 composition.
 
-### Annotation: data import and filtering
+### Data import and filtering
 
 This chunk sets up the analysis and reduces the dataset to the two focal
 species and valid records from 2017 onward. The filtering step is
@@ -68,8 +65,7 @@ dat_str |>
 ![](1_Data_exploration_files/figure-commonmark/unnamed-chunk-1-1.png)
 
 ``` r
-# Mean monthly counts with uncertainty: this summarises the monthly signal while
-# preserving the estimated error around the mean annual pattern.
+# Mean monthly stranding rates with uncertainty (SE) for both species
 dat_str |>
   group_by(Year, Month, Species_co) |>
   summarise(count = n(), .groups = "drop") |>
@@ -105,9 +101,6 @@ dat_str |>
 
 ![](1_Data_exploration_files/figure-commonmark/unnamed-chunk-1-2.png)
 
-This block provides the basic seasonal pattern in strandings and gives a
-quick check of species balance across months.
-
 ### Result
 
 The monthly pattern is easiest to interpret by tracking the seasonal
@@ -120,12 +113,11 @@ This section compares reviewer estimates for decomposition and PMI
 against the self-reported values. It calculates the average of reviewer
 scores and then derives percentage differences from the self-assessment.
 
-### Annotation: reviewer agreement calculation
+### Reviewer agreement calculation
 
 This section calculates the mean reviewer score for each case and then
 derives the percentage difference from the self-reported decomposition
-and PMI values. This is the most technical part of the report because it
-translates multiple reviewer assessments into a single summary metric.
+and PMI values.
 
 ``` r
 decomp <- read.csv("../Data/Decomposition_estimates.csv")
@@ -191,17 +183,16 @@ comparison.
 
 ### Annotation: spatial aggregation logic
 
-This is the most computationally intensive section. It matches each
-boat-survey waypoint to the appropriate grid cell, aggregates counts
-across all survey events, and then calculates the average fishing and
-tourist activity per grid cell.
+The function below matches each boat-survey waypoint to the appropriate
+grid cell, aggregates counts across all survey events, and then
+calculates the average fishing and tourist activity per grid cell.
 
 ``` r
-goa_grid <- st_read("../GIS/Goa_buffer_5km_grid.shp")
+goa_grid <- st_read("../Data/Shp files/Goa_buffer_5km_grid.shp")
 ```
 
     Reading layer `Goa_buffer_5km_grid' from data source 
-      `C:\Users\imran\OneDrive - Indian Institute of Science\IISc files\IISC\Thesis\Quantifying cetacean bycatch\Goa_cetacean_mortality\GIS\Goa_buffer_5km_grid.shp' 
+      `C:\Users\imran\OneDrive - Indian Institute of Science\IISc files\IISC\Thesis\Quantifying cetacean bycatch\Goa_cetacean_mortality\Data\Shp files\Goa_buffer_5km_grid.shp' 
       using driver `ESRI Shapefile'
     Simple feature collection with 264 features and 5 fields
     Geometry type: POLYGON
@@ -210,11 +201,11 @@ goa_grid <- st_read("../GIS/Goa_buffer_5km_grid.shp")
     Geodetic CRS:  WGS 84
 
 ``` r
-goa_coast <- st_read("../GIS/Goa_coast.shp")
+goa_coast <- st_read("../Data/Shp files/Goa_coast.shp")
 ```
 
     Reading layer `Goa_coast' from data source 
-      `C:\Users\imran\OneDrive - Indian Institute of Science\IISc files\IISC\Thesis\Quantifying cetacean bycatch\Goa_cetacean_mortality\GIS\Goa_coast.shp' 
+      `C:\Users\imran\OneDrive - Indian Institute of Science\IISc files\IISC\Thesis\Quantifying cetacean bycatch\Goa_cetacean_mortality\Data\Shp files\Goa_coast.shp' 
       using driver `ESRI Shapefile'
     Simple feature collection with 1 feature and 1 field
     Geometry type: POLYGON
@@ -264,7 +255,7 @@ process_gpx_and_s1 <- function(gpx_folders, s1_files, goa_grid) {
 }
 
 folders <- c(
-  "../Data/Surveys/",
+  "../Data/Surveys/Dec 23",
   "../Data/Surveys/Apr 25/",
   "../Data/Surveys/Nov 25/",
   "../Data/Surveys/Feb 26/"
@@ -284,9 +275,7 @@ dat_map <- final_df |>
   group_by(grid_id) |>
   summarise(FB_avg = mean(FB, na.rm = TRUE), TB_avg = mean(TB, na.rm = TRUE), .groups = "drop")
 
-# Build two separate sf maps and arrange them side by side. We use ggarrange
-# instead of patchwork here because the latter currently fails with sf objects in
-# this environment.
+# Build two separate sf maps and arrange them side by side
 map_TB <- ggplot() +
   geom_sf(data = dat_map, aes(fill = TB_avg), alpha = 0.7) +
   geom_sf(data = goa_coast, fill = "NA", colour = "black") +
@@ -317,15 +306,6 @@ cetacean mortality patterns.
 ### Result
 
 The two-map panel allows spatial comparison of tourist and fishing
-intensity. If the highest values are concentrated in similar grid cells,
-that supports the hypothesis that areas with elevated human activity
-overlap with higher risk for cetacean mortality.
-
-# Notes
-
-- The code is intentionally split by analytical purpose so that each
-  section can be interpreted independently.
-- The spatial mapping section avoids `patchwork` because it can fail
-  with `sf` objects in this R environment.
-- If desired, each section can be made into a separate code chunk or
-  chapter later for a fuller manuscript-ready report.
+intensity. Areas of high tourism and fisheries activities also seem to
+concentrate around areas of high cetacean mortality (although not
+fully).

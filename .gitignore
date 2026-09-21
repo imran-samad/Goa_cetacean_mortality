@@ -1,0 +1,23 @@
+.Rproj.user/
+.Rhistory
+.RData
+.RDataTmp
+.Ruserdata/
+.Rproj
+
+# Positron / VS Code local session files
+.posit/
+.vscode/
+*.code-workspace
+
+# Local Quarto temporary/render files
+*.knit.md
+*_files/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Optional: skip any local session cache folders
+**/.quarto/
